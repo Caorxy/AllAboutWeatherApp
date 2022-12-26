@@ -10,9 +10,19 @@
     <ItemGroup>
       <Folder Include="Fonts" />
       <Folder Include="MVVM\Model" />
-      <Folder Include="MVVM\View" />
-      <Folder Include="MVVM\ViewModel" />
-      <Folder Include="Theme" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Images\weather.png" />
+      <Resource Include="Images\weather.png" />
+      <None Remove="Images\analysing.png" />
+      <Resource Include="Images\analysing.png" />
+      <None Remove="Images\information.png" />
+      <Resource Include="Images\information.png" />
+      <None Remove="Images\mountains.png" />
+      <Resource Include="Images\mountains.png" />
+      <None Remove="Images\weatherForecast.png" />
+      <Resource Include="Images\weatherForecast.png" />
     </ItemGroup>
 
 </Project>

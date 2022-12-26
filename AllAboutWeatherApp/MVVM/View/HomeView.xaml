@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="AllAboutWeatherApp.MVVM.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:AllAboutWeatherApp.MVVM.View"
+             mc:Ignorable="d"
+             d:DesignHeight="465" d:DesignWidth="640">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Button Name="WeatherForecastButton" 
+                Margin="20,0,20, 10" 
+                Style="{StaticResource ButtonStyle}">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+            <StackPanel>
+                <Image Source="../../Images/weatherForecast.png"
+                       Height="120" />
+                <TextBlock FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="DemiBold" Margin="0,10,0,5">Weather Forecast</TextBlock>
+            </StackPanel>
+        </Button>
+        
+        <Button Name="MountainsButton" Grid.Row="0" Grid.Column="1" 
+                Margin="20,0,20, 10" 
+                Style="{StaticResource ButtonStyle}">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+            <StackPanel>
+                <Image Source="../../Images/mountains.png"
+                       Height="120" />
+                <TextBlock FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="DemiBold" Margin="0,10,0,5">Mountain Conditions</TextBlock>
+            </StackPanel>
+        </Button>
+        
+        <Button Name="AnalysisButton" Grid.Row="1" Grid.Column="0" 
+                Margin="20,10,20, 0" 
+                Style="{StaticResource ButtonStyle}">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+            <StackPanel>
+                <Image Source="../../Images/analysing.png"
+                       Height="120" />
+                <TextBlock FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="DemiBold" Margin="0,10,0,5">Analysis</TextBlock>
+            </StackPanel>
+        </Button>
+        
+        <Button Name="AboutAppButton" Grid.Row="1" Grid.Column="1" 
+                Margin="20,10,20, 0" 
+                Style="{StaticResource ButtonStyle}">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+            <StackPanel>
+                <Image Source="../../Images/information.png"
+                       Height="120" />
+                <TextBlock FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="DemiBold" Margin="0,10,0,5">About</TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+</UserControl>
