@@ -25,7 +25,8 @@
         
         <Button Name="WeatherForecastButton" 
                 Margin="20,0,20, 10" 
-                Style="{StaticResource ButtonStyle}">
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding ChooseLocationCommand}">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="15"/>

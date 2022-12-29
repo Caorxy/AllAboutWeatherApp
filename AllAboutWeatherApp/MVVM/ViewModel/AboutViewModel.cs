@@ -11,8 +11,7 @@ public class AboutViewModel : ObservableObject
     {
         HyperlinkCommand = new RelayCommand(o =>
         {
-            string? url = o as string;
-            if (url != null) Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+            if (o is string url) Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
         });
     }
 }
