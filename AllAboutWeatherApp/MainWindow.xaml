@@ -10,7 +10,8 @@
         Height="600" Width="800"
         ResizeMode="NoResize"
         WindowStyle="SingleBorderWindow"
-        >
+        FontFamily="Fonts/#Lato"
+>
     
     <Window.DataContext>
         <viewModel:MainViewModel />
@@ -33,6 +34,7 @@
                     Opacity="0.7"
                     Padding="0"/>
             <TextBlock Grid.Row="0" 
+                       FontFamily="/Fonts/#Lato"
                        Text="All About Weather"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
@@ -48,8 +50,7 @@
                    Height="50"
                    />
             <ContentControl Grid.Row="1"
-                            Margin="30"
-                            Content="{Binding CurrentView}"/>
+                            Content="{Binding CurrentView, Mode=TwoWay}"/>
         </Grid>
     </Border>
 </Window>

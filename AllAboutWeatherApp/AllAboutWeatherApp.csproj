@@ -25,4 +25,9 @@
       <Resource Include="Images\weatherForecast.png" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Images\home.png" />
+      <Resource Include="Images\home.png" />
+    </ItemGroup>
+
 </Project>

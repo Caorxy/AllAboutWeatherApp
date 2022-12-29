@@ -4,8 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:AllAboutWeatherApp.MVVM.View"
+             xmlns:viewModel="clr-namespace:AllAboutWeatherApp.MVVM.ViewModel"
              mc:Ignorable="d"
+             Margin="30"
+             FontFamily="Fonts/#Lato"
              d:DesignHeight="465" d:DesignWidth="640">
+            <UserControl.DataContext>
+                <viewModel:MainViewModel />
+            </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -46,7 +52,6 @@
                 <TextBlock FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="DemiBold" Margin="0,10,0,5">Mountain Conditions</TextBlock>
             </StackPanel>
         </Button>
-        
         <Button Name="AnalysisButton" Grid.Row="1" Grid.Column="0" 
                 Margin="20,10,20, 0" 
                 Style="{StaticResource ButtonStyle}">
@@ -64,7 +69,8 @@
         
         <Button Name="AboutAppButton" Grid.Row="1" Grid.Column="1" 
                 Margin="20,10,20, 0" 
-                Style="{StaticResource ButtonStyle}">
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding AboutViewCommand}">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="15"/>
