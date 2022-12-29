@@ -54,7 +54,7 @@
             Width="500"
             Height="60"
             Margin="0,70,140,0">
-            <TextBlock 
+            <TextBlock
                 TextAlignment="Center"
                 FontSize="30"
                 FontWeight="DemiBold"
@@ -76,14 +76,14 @@
             Width="500"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
-            Margin="0,40,140,40">
+            Margin="0,40,140,0">
                 <StackPanel>
                     <TextBlock
                         TextWrapping="Wrap"
                            TextAlignment="Center"
                            VerticalAlignment="Top"
                            FontSize="20"
-                           Padding="20, 30,20,0"
+                           Padding="20, 40,20,20"
                            Foreground="White"
                            LineHeight="30"
                            LineStackingStrategy="BlockLineHeight">
@@ -95,7 +95,7 @@
                         TextWrapping="Wrap"
                         TextAlignment="Left"
                         VerticalAlignment="Center"
-                        Padding="20,10"
+                        Padding="20,10,0,10"
                         FontSize="10"
                         Foreground="White"
                         DataContext="{Binding DataContext.AboutVm, RelativeSource={RelativeSource AncestorType=UserControl}}"
