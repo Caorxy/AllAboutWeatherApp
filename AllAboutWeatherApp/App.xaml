@@ -1,7 +1,6 @@
 ﻿<Application x:Class="AllAboutWeatherApp.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:AllAboutWeatherApp"
              xmlns:viewModel="clr-namespace:AllAboutWeatherApp.MVVM.ViewModel"
              xmlns:view="clr-namespace:AllAboutWeatherApp.MVVM.View"
              StartupUri="MainWindow.xaml">
@@ -16,11 +15,15 @@
             <DataTemplate DataType="{x:Type viewModel:ChooseLocationViewModel}">
                 <view:ChooseLocationView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:LocationListViewModel}">
+                <view:LocationListView/>
+            </DataTemplate>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/ButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/HomeButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/HyperlinkTheme.xaml"/>
                 <ResourceDictionary Source="Theme/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/SubmitButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

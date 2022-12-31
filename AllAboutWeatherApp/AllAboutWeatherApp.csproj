@@ -9,7 +9,6 @@
 
     <ItemGroup>
       <Folder Include="Fonts" />
-      <Folder Include="MVVM\Model" />
     </ItemGroup>
 
     <ItemGroup>
@@ -28,6 +27,12 @@
     <ItemGroup>
       <None Remove="Images\home.png" />
       <Resource Include="Images\home.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+      <PackageReference Include="Prism.Wpf" Version="8.1.97" />
     </ItemGroup>
 
 </Project>

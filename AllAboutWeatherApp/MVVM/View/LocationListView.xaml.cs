@@ -1,12 +1,11 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using AllAboutWeatherApp.MVVM.ViewModel;
 
 namespace AllAboutWeatherApp.MVVM.View;
 
-public partial class ChooseLocationView : UserControl
+public partial class LocationListView : UserControl
 {
-    public ChooseLocationView()
+    public LocationListView()
     {
         InitializeComponent();
         DataContext = Application.Current.MainWindow?.DataContext;
