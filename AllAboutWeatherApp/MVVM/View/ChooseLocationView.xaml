@@ -60,11 +60,11 @@
                 >
                     <b:Interaction.Triggers>
                         <b:EventTrigger EventName="Click">
-                            <b:InvokeCommandAction Command="{Binding LocationListViewCommand}"/>
                             <b:InvokeCommandAction Command="{Binding 
                             RelativeSource={RelativeSource AncestorType=UserControl},
                             Path=DataContext.ChooseLocationVm.AccessLocationData}"
                                                    CommandParameter="{Binding Text,ElementName=LocationTyped}"/>
+                            <b:InvokeCommandAction Command="{Binding LocationListViewCommand}"/>
                         </b:EventTrigger>
                     </b:Interaction.Triggers>
 

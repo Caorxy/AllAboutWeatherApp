@@ -1,4 +1,5 @@
-﻿using AllAboutWeatherApp.Core;
+﻿using System.Threading.Tasks;
+using AllAboutWeatherApp.Core;
 
 namespace AllAboutWeatherApp.MVVM.ViewModel;
 
@@ -50,8 +51,9 @@ public class MainViewModel : ObservableObject
             CurrentView = ChooseLocationVm;
         });        
         
-        LocationListViewCommand = new RelayCommand(_ =>
+        LocationListViewCommand = new RelayCommand(async _ =>
         {
+            await Task.Delay(1000);
             CurrentView = LocationListVm;
         });
 

@@ -24,6 +24,7 @@
                 <ResourceDictionary Source="Theme/HyperlinkTheme.xaml"/>
                 <ResourceDictionary Source="Theme/TextBoxTheme.xaml"/>
                 <ResourceDictionary Source="Theme/SubmitButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/LocationButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

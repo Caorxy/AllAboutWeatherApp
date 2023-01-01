@@ -5,6 +5,7 @@ namespace AllAboutWeatherApp.MVVM.ViewModel;
 
 public class ChooseLocationViewModel
 {
+    
     public RelayCommand AccessLocationData { get; set; }
     
     public ChooseLocationViewModel()
@@ -14,7 +15,7 @@ public class ChooseLocationViewModel
         {
             SearchedLocationData searched = new SearchedLocationData();
             searched.Location = o as string;
-            await geoClient.GetLocations(searched);
+            LocationListViewModel.SetLocationData(await geoClient.GetLocations(searched));
         });
     }
 }
