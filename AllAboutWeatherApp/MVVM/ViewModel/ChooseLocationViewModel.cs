@@ -7,14 +7,13 @@ public class ChooseLocationViewModel
 {
     public RelayCommand AccessLocationData { get; set; }
     
-    public ChooseLocationViewModel()
+    public ChooseLocationViewModel(ILocationRepository locationRepository, LocationListViewModel locationListViewModel)
     {
-        GeoCodingSingleton.GeoCodingClient geoClient = new GeoCodingSingleton.GeoCodingClient();
         AccessLocationData = new RelayCommand(async o =>
         {
             SearchedLocationData searched = new SearchedLocationData();
             searched.Location = o as string;
-            LocationListViewModel.SetLocationData(await geoClient.GetLocations(searched));
+            locationListViewModel.SetLocationData(await locationRepository.GetLocations(searched));
         });
     }
 }
