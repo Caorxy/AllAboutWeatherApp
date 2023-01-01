@@ -34,6 +34,7 @@
             Margin="0,0,100,0">
             <StackPanel>
                 <Button
+                    Command="{Binding WeatherForecastViewCommand}"
                     Style="{StaticResource LocationButtonStyle}">
                     <Button.Content>
                         <Grid
@@ -143,6 +144,7 @@
                 </Button>
                 
                 <Button
+                    Command="{Binding WeatherForecastViewCommand}"
                     Style="{StaticResource LocationButtonStyle}">
                     <Button.Content>
                         <Grid
@@ -252,6 +254,7 @@
                 </Button>
                 
                 <Button
+                    Command="{Binding WeatherForecastViewCommand}"
                     Style="{StaticResource LocationButtonStyle}">
                     <Button.Content>
                         <Grid
@@ -361,6 +364,7 @@
                 </Button>
                 
                 <Button
+                    Command="{Binding WeatherForecastViewCommand}"
                     Style="{StaticResource LocationButtonStyle}">
                     <Button.Content>
                         <Grid

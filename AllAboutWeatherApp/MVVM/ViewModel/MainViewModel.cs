@@ -9,11 +9,13 @@ public class MainViewModel : ObservableObject
     public RelayCommand AboutViewCommand { get; set; }
     public RelayCommand ChooseLocationCommand { get; set; }
     public RelayCommand LocationListViewCommand { get; set; }
+    public RelayCommand WeatherForecastViewCommand { get; set; }
 
     public HomeViewModel HomeVm { get; set; }
     public AboutViewModel AboutVm { get; set; }
     public LocationListViewModel LocationListVm { get; set; }
     public ChooseLocationViewModel ChooseLocationVm { get; set; }
+    public WeatherForecastViewModel WeatherForecastVm { get; set; }
     private object? _currentView;
 
     public object? CurrentView
@@ -34,6 +36,7 @@ public class MainViewModel : ObservableObject
         AboutVm = new AboutViewModel();
         ChooseLocationVm = new ChooseLocationViewModel();
         LocationListVm = new LocationListViewModel();
+        WeatherForecastVm = new  WeatherForecastViewModel();
         CurrentView = HomeVm;
 
         HomeViewCommand = new RelayCommand(_ =>
@@ -50,10 +53,15 @@ public class MainViewModel : ObservableObject
         {
             CurrentView = ChooseLocationVm;
         });        
+                
+        WeatherForecastViewCommand = new RelayCommand(_ =>
+        {
+            CurrentView = WeatherForecastVm;
+        });        
         
         LocationListViewCommand = new RelayCommand(async _ =>
         {
-            await Task.Delay(1000);
+            await Task.Delay(5000);
             CurrentView = LocationListVm;
         });
 

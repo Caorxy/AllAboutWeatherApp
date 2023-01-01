@@ -18,6 +18,9 @@
             <DataTemplate DataType="{x:Type viewModel:LocationListViewModel}">
                 <view:LocationListView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:WeatherForecastViewModel}">
+                <view:WeatherForecastView/>
+            </DataTemplate>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/ButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/HomeButtonTheme.xaml"/>

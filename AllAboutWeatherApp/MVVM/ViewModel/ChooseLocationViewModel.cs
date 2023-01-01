@@ -5,7 +5,6 @@ namespace AllAboutWeatherApp.MVVM.ViewModel;
 
 public class ChooseLocationViewModel
 {
-    
     public RelayCommand AccessLocationData { get; set; }
     
     public ChooseLocationViewModel()
