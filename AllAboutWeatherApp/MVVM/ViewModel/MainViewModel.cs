@@ -35,7 +35,7 @@ public class MainViewModel : ObservableObject
         HomeVm = new HomeViewModel();
         AboutVm = new AboutViewModel();
         LocationListVm = new LocationListViewModel();
-        ChooseLocationVm = new ChooseLocationViewModel(new LocationRepository(), LocationListVm);
+        ChooseLocationVm = new ChooseLocationViewModel(new LocationRepository());
         WeatherForecastVm = new  WeatherForecastViewModel();
         CurrentView = HomeVm;
 
@@ -59,7 +59,7 @@ public class MainViewModel : ObservableObject
             CurrentView = WeatherForecastVm;
         });        
         
-        LocationListViewCommand = new RelayCommand(async _ =>
+        LocationListViewCommand = new RelayCommand( _ =>
         {
             CurrentView = LocationListVm;
         });

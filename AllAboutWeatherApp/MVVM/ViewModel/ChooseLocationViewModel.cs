@@ -1,4 +1,5 @@
 ﻿using AllAboutWeatherApp.Core;
+using AllAboutWeatherApp.Mediator;
 using AllAboutWeatherApp.MVVM.Model;
 
 namespace AllAboutWeatherApp.MVVM.ViewModel;
@@ -7,13 +8,20 @@ public class ChooseLocationViewModel
 {
     public RelayCommand AccessLocationData { get; set; }
     
-    public ChooseLocationViewModel(ILocationRepository locationRepository, LocationListViewModel locationListViewModel)
+    public ChooseLocationViewModel(ILocationRepository locationRepository)
     {
         AccessLocationData = new RelayCommand(async o =>
         {
-            SearchedLocationData searched = new SearchedLocationData();
+            var searched = new SearchedLocationData();
             searched.Location = o as string;
-            locationListViewModel.SetLocationData(await locationRepository.GetLocations(searched));
+            var locationData = await locationRepository.GetLocations(searched);
+
+            Mediator.Mediator.GetInstance().OnEvent(this, new LocationDataMessage
+            {
+                MessageType = "LocationData",
+                LocationData = locationData
+            });
         });
     }
 }
+

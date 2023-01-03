@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AllAboutWeatherApp.Core;
+using AllAboutWeatherApp.Mediator;
 using AllAboutWeatherApp.MVVM.Model;
 
 namespace AllAboutWeatherApp.MVVM.ViewModel;
@@ -44,6 +45,21 @@ public class LocationListViewModel : ObservableObject
             _locationData4 = value;
             OnPropertyChanged();
         }
+    }
+
+    public LocationListViewModel()
+    {
+        // Listen for messages from the mediator
+        Mediator.Mediator.GetInstance().Event += (_, e) =>
+        {
+            // Check the message type to determine if the message is intended for this view model
+            if (e is MediatorMessage message && message.MessageType == "LocationData")
+            {
+                // Update the LocationData properties with the location data from the message
+                var locationDataMessage = (LocationDataMessage) message;
+                SetLocationData(locationDataMessage.LocationData);
+            }
+        };
     }
 
     public void SetLocationData(IEnumerable<LocationData>? locationData)
