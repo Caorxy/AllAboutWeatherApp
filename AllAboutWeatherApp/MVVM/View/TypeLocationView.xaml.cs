@@ -4,9 +4,9 @@ using AllAboutWeatherApp.MVVM.ViewModel;
 
 namespace AllAboutWeatherApp.MVVM.View;
 
-public partial class ChooseLocationView : UserControl
+public partial class TypeLocationView : UserControl
 {
-    public ChooseLocationView()
+    public TypeLocationView()
     {
         InitializeComponent();
         DataContext = Application.Current.MainWindow?.DataContext;

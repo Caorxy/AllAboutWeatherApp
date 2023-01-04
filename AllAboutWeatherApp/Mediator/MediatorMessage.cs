@@ -12,3 +12,8 @@ public class LocationDataMessage : MediatorMessage
 {
     public IEnumerable<LocationData>? LocationData { get; set; }
 }
+
+public class ForecastDataMessage : MediatorMessage
+{
+    public OpenWeatherForecast? ForecastData { get; set; }
+}

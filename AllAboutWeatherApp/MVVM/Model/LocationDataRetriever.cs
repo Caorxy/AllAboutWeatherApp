@@ -4,12 +4,12 @@ using System.Threading.Tasks;
 
 namespace AllAboutWeatherApp.MVVM.Model;
 
-public class LocationRepository : ILocationRepository
+public class LocationDataRetriever : ILocationDataRetriever
 {
     private readonly HttpClient _client;
     private readonly string _apiKey;
 
-    public LocationRepository()
+    public LocationDataRetriever()
     {
         _client = new HttpClient();
         _apiKey = "005acbc1300f9c9027a264d7028893f6";

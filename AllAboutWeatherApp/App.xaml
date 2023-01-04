@@ -12,8 +12,8 @@
             <DataTemplate DataType="{x:Type viewModel:AboutViewModel}">
                 <view:AboutView/>
             </DataTemplate> 
-            <DataTemplate DataType="{x:Type viewModel:ChooseLocationViewModel}">
-                <view:ChooseLocationView/>
+            <DataTemplate DataType="{x:Type viewModel:TypeLocationViewModel}">
+                <view:TypeLocationView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:LocationListViewModel}">
                 <view:LocationListView/>
@@ -28,6 +28,7 @@
                 <ResourceDictionary Source="Theme/TextBoxTheme.xaml"/>
                 <ResourceDictionary Source="Theme/SubmitButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/LocationButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/NavButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

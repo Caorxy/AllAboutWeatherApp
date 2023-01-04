@@ -14,7 +14,7 @@ public class MainViewModel : ObservableObject
     public HomeViewModel HomeVm { get; set; }
     public AboutViewModel AboutVm { get; set; }
     public LocationListViewModel LocationListVm { get; set; }
-    public ChooseLocationViewModel ChooseLocationVm { get; set; }
+    public TypeLocationViewModel TypeLocationVm { get; set; }
     public WeatherForecastViewModel WeatherForecastVm { get; set; }
     private object? _currentView;
 
@@ -32,10 +32,11 @@ public class MainViewModel : ObservableObject
     
     public MainViewModel()
     {
+        IRepository repository = new Repository(new DataRetrieverFactory());
         HomeVm = new HomeViewModel();
         AboutVm = new AboutViewModel();
-        LocationListVm = new LocationListViewModel();
-        ChooseLocationVm = new ChooseLocationViewModel(new LocationRepository());
+        LocationListVm = new LocationListViewModel(repository);
+        TypeLocationVm = new TypeLocationViewModel(repository);
         WeatherForecastVm = new  WeatherForecastViewModel();
         CurrentView = HomeVm;
 
@@ -51,7 +52,7 @@ public class MainViewModel : ObservableObject
         
         ChooseLocationCommand = new RelayCommand(_ =>
         {
-            CurrentView = ChooseLocationVm;
+            CurrentView = TypeLocationVm;
         });        
                 
         WeatherForecastViewCommand = new RelayCommand(_ =>

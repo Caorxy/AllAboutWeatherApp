@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModel="clr-namespace:AllAboutWeatherApp.MVVM.ViewModel"
              mc:Ignorable="d"
-             d:DesignHeight="525" d:DesignWidth="700">
+             d:DesignHeight="525" d:DesignWidth="800">
         <UserControl.DataContext>
             <viewModel:MainViewModel />
         </UserControl.DataContext>
@@ -25,13 +25,46 @@
                            Margin="40,0,0,30"/>
                 </StackPanel>
             </Button>
+            
+            <Button 
+                Name="NextButton"
+                Style="{StaticResource NavButtonStyle}"
+                HorizontalAlignment="Right"
+                Margin="0,60,55,0">
+                <Button.Content>
+                    <TextBlock Foreground="White"
+                               FontSize="17">NEXT</TextBlock>
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10,10,10,10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>   
+            
+            <Button 
+                Name="BackButton"
+                Style="{StaticResource NavButtonStyle}"
+                HorizontalAlignment="Left"
+                Margin="10,60,0,0">
+                <Button.Content>
+                    <TextBlock Foreground="White"
+                               FontSize="17">BACK</TextBlock>
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10,10,10,10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+     
         
             <Border
                 CornerRadius="10"
                 Width="496"
                 Height="400"
-                HorizontalAlignment="Left"
-                Margin="80,0,0,0">
+                HorizontalAlignment="Center"
+                Margin="0,60,40,0">
                 <Grid>
                     <Border
                         CornerRadius="10"
@@ -47,7 +80,7 @@
                                 HorizontalAlignment="Center"
                                 Height="140">
                                 <TextBlock
-                                    VerticalAlignment="Center">
+                                    VerticalAlignment="Bottom">
                                     <TextBox
                                         BorderThickness="0"
                                         Background="Black"
@@ -178,7 +211,7 @@
                                 HorizontalAlignment="Center"
                                 Height="140">
                                 <TextBlock
-                                    VerticalAlignment="Center">
+                                    VerticalAlignment="Bottom">
                                     <TextBox
                                         BorderThickness="0"
                                         Background="Black"
@@ -309,7 +342,7 @@
                                 HorizontalAlignment="Center"
                                 Height="140">
                                 <TextBlock
-                                    VerticalAlignment="Center">
+                                    VerticalAlignment="Bottom">
                                     <TextBox
                                         BorderThickness="0"
                                         Background="Black"

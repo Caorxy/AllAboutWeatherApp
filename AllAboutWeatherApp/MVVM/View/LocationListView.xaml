@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModel="clr-namespace:AllAboutWeatherApp.MVVM.ViewModel"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d"
              d:DesignHeight="525" d:DesignWidth="700"
              FontFamily="Fonts/#Lato">
@@ -34,7 +35,6 @@
             Margin="0,0,100,0">
             <StackPanel>
                 <Button
-                    Command="{Binding WeatherForecastViewCommand}"
                     Style="{StaticResource LocationButtonStyle}">
                     <Button.Content>
                         <Grid
@@ -141,6 +141,15 @@
                             />
                         </Grid>
                     </Button.Content>
+                    <b:Interaction.Triggers>
+                        <b:EventTrigger EventName="Click">
+                            <b:InvokeCommandAction Command="{Binding 
+                                RelativeSource={RelativeSource AncestorType=UserControl},
+                                Path=DataContext.LocationListVm.AccessWeatherForecastData}"
+                                                   CommandParameter="1"/>
+                            <b:InvokeCommandAction Command="{Binding WeatherForecastViewCommand}"/>
+                        </b:EventTrigger>
+                    </b:Interaction.Triggers>
                 </Button>
                 
                 <Button
@@ -251,6 +260,15 @@
                             />
                         </Grid>
                     </Button.Content>
+                    <b:Interaction.Triggers>
+                        <b:EventTrigger EventName="Click">
+                            <b:InvokeCommandAction Command="{Binding 
+                                RelativeSource={RelativeSource AncestorType=UserControl},
+                                Path=DataContext.LocationListVm.AccessWeatherForecastData}"
+                                                   CommandParameter="2"/>
+                            <b:InvokeCommandAction Command="{Binding WeatherForecastViewCommand}"/>
+                        </b:EventTrigger>
+                    </b:Interaction.Triggers>
                 </Button>
                 
                 <Button
@@ -361,6 +379,15 @@
                             />
                         </Grid>
                     </Button.Content>
+                    <b:Interaction.Triggers>
+                        <b:EventTrigger EventName="Click">
+                            <b:InvokeCommandAction Command="{Binding 
+                                RelativeSource={RelativeSource AncestorType=UserControl},
+                                Path=DataContext.LocationListVm.AccessWeatherForecastData}"
+                                                   CommandParameter="3"/>
+                            <b:InvokeCommandAction Command="{Binding WeatherForecastViewCommand}"/>
+                        </b:EventTrigger>
+                    </b:Interaction.Triggers>
                 </Button>
                 
                 <Button
@@ -471,6 +498,15 @@
                             />
                         </Grid>
                     </Button.Content>
+                    <b:Interaction.Triggers>
+                        <b:EventTrigger EventName="Click">
+                            <b:InvokeCommandAction Command="{Binding 
+                                RelativeSource={RelativeSource AncestorType=UserControl},
+                                Path=DataContext.LocationListVm.AccessWeatherForecastData}"
+                                                   CommandParameter="4"/>
+                            <b:InvokeCommandAction Command="{Binding WeatherForecastViewCommand}"/>
+                        </b:EventTrigger>
+                    </b:Interaction.Triggers>
                 </Button>
             </StackPanel>
         </Border>

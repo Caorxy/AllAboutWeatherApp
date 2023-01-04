@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace AllAboutWeatherApp.MVVM.Model;
 
-public interface ILocationRepository
+public interface ILocationDataRetriever
 {
     Task<IEnumerable<LocationData>> GetLocations(SearchedLocationData locationSearchData);
 }

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="AllAboutWeatherApp.MVVM.View.ChooseLocationView"
+﻿<UserControl x:Class="AllAboutWeatherApp.MVVM.View.TypeLocationView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -62,7 +62,7 @@
                         <b:EventTrigger EventName="Click">
                             <b:InvokeCommandAction Command="{Binding 
                             RelativeSource={RelativeSource AncestorType=UserControl},
-                            Path=DataContext.ChooseLocationVm.AccessLocationData}"
+                            Path=DataContext.TypeLocationVm.AccessLocationData}"
                                                    CommandParameter="{Binding Text,ElementName=LocationTyped}"/>
                             <b:InvokeCommandAction Command="{Binding LocationListViewCommand}"/>
                         </b:EventTrigger>

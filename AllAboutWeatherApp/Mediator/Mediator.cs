@@ -4,23 +4,22 @@ namespace AllAboutWeatherApp.Mediator;
 
 public class Mediator
 {
-    private static Mediator instance;
+    private static Mediator? _instance;
+    public event EventHandler<object>? Event;
 
     private Mediator() {}
 
     public static Mediator GetInstance()
     {
-        if (instance == null)
+        if (_instance == null)
         {
-            instance = new Mediator();
+            _instance = new Mediator();
         }
-        return instance;
+        return _instance;
     }
-
-    public event EventHandler<object> Event;
-
+    
     public void OnEvent(object sender, object e)
     {
-        Event.Invoke(sender, e);
+        Event?.Invoke(sender, e);
     }
 }
