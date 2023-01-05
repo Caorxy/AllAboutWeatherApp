@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace AllAboutWeatherApp.MVVM.Model;
 
@@ -25,6 +26,7 @@ public class ForecastData
     public SnowData Snow { get; set; }
     public SysData Sys { get; set; }
     public DateTime Dt_txt { get; set; }
+    public string PathToIcon {get; set; }
 }
 
 
@@ -63,6 +65,7 @@ public class WindData
 
 public class RainData
 {
+    [JsonProperty(PropertyName = "3h")]
     public double ThreeH { get; set; }
 }
 

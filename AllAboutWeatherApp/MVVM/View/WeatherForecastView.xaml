@@ -27,6 +27,7 @@
             </Button>
             
             <Button 
+                Command="{Binding WeatherForecastVm.NextCommand}"    
                 Name="NextButton"
                 Style="{StaticResource NavButtonStyle}"
                 HorizontalAlignment="Right"
@@ -43,6 +44,7 @@
             </Button>   
             
             <Button 
+                Command="{Binding WeatherForecastVm.BackCommand}"    
                 Name="BackButton"
                 Style="{StaticResource NavButtonStyle}"
                 HorizontalAlignment="Left"
@@ -75,6 +77,12 @@
                         Opacity="0.7"
                         BorderThickness="3">
                         <Grid>
+                            <Image
+                                Height="120"
+                                VerticalAlignment="Top"
+                                Margin="0,20,0,0"
+                                Source="{Binding WeatherForecastVm.FirstTabForecastData.PathToIcon}">
+                            </Image>
                             <Border
                             Height="250"
                             VerticalAlignment="Bottom"
@@ -181,7 +189,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="68"
+                                        Width="63"
                                         Text="{Binding Path=WeatherForecastVm.FirstTabForecastData.Rain.ThreeH}"
                                     />
                                     <TextBox
@@ -190,9 +198,9 @@
                                         Margin="0,10,0,0"
                                         Foreground="White"
                                         Background="Black"
-                                        FontSize="18"
-                                        Width="20"
-                                        Text="%"
+                                        FontSize="12"
+                                        Width="30"
+                                        Text="mm"
                                     />
                                     
                                 </TextBlock>
@@ -271,6 +279,12 @@
                         Opacity="0.7"
                         BorderThickness="3">
                         <Grid>
+                            <Image
+                                Height="120"
+                                VerticalAlignment="Top"
+                                Margin="0,20,0,0"
+                                Source="{Binding WeatherForecastVm.SecondTabForecastData.PathToIcon}">
+                            </Image>
                             <Border
                             Height="250"
                             VerticalAlignment="Bottom"
@@ -377,7 +391,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="68"
+                                        Width="63"
                                         Text="{Binding Path=WeatherForecastVm.SecondTabForecastData.Rain.ThreeH}"
                                     />
                                     <TextBox
@@ -386,11 +400,10 @@
                                         Margin="0,10,0,0"
                                         Foreground="White"
                                         Background="Black"
-                                        FontSize="18"
-                                        Width="20"
-                                        Text="%"
+                                        FontSize="12"
+                                        Width="30"
+                                        Text="mm"
                                     />
-                                    
                                 </TextBlock>
                                 <TextBlock Grid.Row="4">
                                     <TextBox
@@ -467,6 +480,12 @@
                         Opacity="0.7"
                         BorderThickness="3">
                         <Grid>
+                            <Image
+                                Height="120"
+                                VerticalAlignment="Top"
+                                Margin="0,20,0,0"
+                                Source="{Binding WeatherForecastVm.ThirdTabForecastData.PathToIcon}">
+                            </Image>
                             <Border
                             Height="250"
                             VerticalAlignment="Bottom"
@@ -573,7 +592,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="68"
+                                        Width="63"
                                         Text="{Binding Path=WeatherForecastVm.ThirdTabForecastData.Rain.ThreeH}"
                                     />
                                     <TextBox
@@ -582,9 +601,9 @@
                                         Margin="0,10,0,0"
                                         Foreground="White"
                                         Background="Black"
-                                        FontSize="18"
-                                        Width="20"
-                                        Text="%"
+                                        FontSize="12"
+                                        Width="30"
+                                        Text="mm"
                                     />
                                     
                                 </TextBlock>
