@@ -6,27 +6,27 @@ namespace AllAboutWeatherApp.MVVM.Model;
 
 public class OpenWeatherForecast
 {
-    public string Cod { get; set; }
+    public string? Cod { get; set; }
     public decimal Message { get; set; }
     public int Cnt { get; set; }
-    public List<ForecastData> List { get; set; }
-    public City City { get; set; }
+    public List<ForecastData?>? List { get; set; }
+    public City? City { get; set; }
 }
 
 public class ForecastData
 {
     public DateTime Date { get; set; }
-    public MainData Main { get; set; }
-    public List<WeatherData> Weather { get; set; }
-    public CloudData Clouds { get; set; }
-    public WindData Wind { get; set; }
+    public MainData? Main { get; set; }
+    public List<WeatherData>? Weather { get; set; }
+    public CloudData? Clouds { get; set; }
+    public WindData? Wind { get; set; }
     public double Visibility { get; set; }
     public double Pop { get; set; }
-    public RainData Rain { get; set; }
-    public SnowData Snow { get; set; }
-    public SysData Sys { get; set; }
+    public RainData? Rain { get; set; }
+    public SnowData? Snow { get; set; }
+    public SysData? Sys { get; set; }
     public DateTime Dt_txt { get; set; }
-    public string PathToIcon {get; set; }
+    public string? PathToIcon {get; set; }
 }
 
 
@@ -46,9 +46,9 @@ public class MainData
 public class WeatherData
 {
     public int Id { get; set; }
-    public string Main { get; set; }
-    public string Description { get; set; }
-    public string Icon { get; set; }
+    public string? Main { get; set; }
+    public string? Description { get; set; }
+    public string? Icon { get; set; }
 }
 
 public class CloudData
@@ -76,15 +76,15 @@ public class SnowData
 
 public class SysData
 {
-    public string Pod { get; set; }
+    public string? Pod { get; set; }
 }
 
 public class City
 {
     public int Id { get; set; }
-    public string Name { get; set; }
-    public GeoCoordinates Coord { get; set; }
-    public string Country { get; set; }
+    public string? Name { get; set; }
+    public GeoCoordinates? Coord { get; set; }
+    public string? Country { get; set; }
     public int Population { get; set; }
     public int Timezone { get; set; }
     public int Sunrise { get; set; }

@@ -111,15 +111,11 @@
                                     />
                                 </TextBlock>
                                 <TextBlock Grid.Row="1">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Temp:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/thermometer.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                        />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -127,7 +123,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="63"
+                                        Width="70"
                                         Text="{Binding Path=WeatherForecastVm.FirstTabForecastData.Main.Temp}"
                                         />
                                     <TextBox
@@ -137,19 +133,15 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Text="K"
+                                        Text="°C"
                                         />
                                 </TextBlock>
                                 <TextBlock Grid.Row="2">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Clouds:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/cloudy-dau.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                    />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -157,7 +149,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="50"
+                                        Width="70"
                                         Text="{Binding Path=WeatherForecastVm.FirstTabForecastData.Clouds.All}"
                                     />
                                     <TextBox
@@ -173,15 +165,11 @@
                                     
                                 </TextBlock>
                                 <TextBlock Grid.Row="3">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Rain:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/drop.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                    />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -189,7 +177,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="63"
+                                        Width="68"
                                         Text="{Binding Path=WeatherForecastVm.FirstTabForecastData.Rain.ThreeH}"
                                     />
                                     <TextBox
@@ -205,15 +193,11 @@
                                     
                                 </TextBlock>
                                 <TextBlock Grid.Row="4">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Wind:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/wind-flag.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                    />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -221,7 +205,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="50"
+                                        Width="68"
                                         Text="{Binding Path=WeatherForecastVm.FirstTabForecastData.Wind.Speed}"
                                     />
                                     <TextBox
@@ -231,21 +215,17 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="12"
-                                        Text="mp/h"
+                                        Text="m/s"
                                     />
                                     
                                 </TextBlock>
                                 <TextBlock Grid.Row="5"
                                            Margin="0,0,0,0">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Humidity:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/humidity.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                    />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -253,7 +233,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="30"
+                                        Width="70"
                                         Text="{Binding Path=WeatherForecastVm.FirstTabForecastData.Main.Humidity}"
                                     />
                                     <TextBox
@@ -313,15 +293,11 @@
                                     />
                                 </TextBlock>
                                 <TextBlock Grid.Row="1">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Temp:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/thermometer.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                        />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -329,7 +305,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="63"
+                                        Width="70"
                                         Text="{Binding Path=WeatherForecastVm.SecondTabForecastData.Main.Temp}"
                                         />
                                     <TextBox
@@ -339,19 +315,15 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Text="K"
+                                        Text="°C"
                                         />
                                 </TextBlock>
                                 <TextBlock Grid.Row="2">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Clouds:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/cloudy-dau.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                    />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -359,7 +331,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="50"
+                                        Width="70"
                                         Text="{Binding Path=WeatherForecastVm.SecondTabForecastData.Clouds.All}"
                                     />
                                     <TextBox
@@ -375,15 +347,11 @@
                                     
                                 </TextBlock>
                                 <TextBlock Grid.Row="3">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Rain:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/drop.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                    />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -391,7 +359,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="63"
+                                        Width="68"
                                         Text="{Binding Path=WeatherForecastVm.SecondTabForecastData.Rain.ThreeH}"
                                     />
                                     <TextBox
@@ -404,17 +372,14 @@
                                         Width="30"
                                         Text="mm"
                                     />
+                                    
                                 </TextBlock>
                                 <TextBlock Grid.Row="4">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Wind:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/wind-flag.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                    />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -422,7 +387,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="50"
+                                        Width="68"
                                         Text="{Binding Path=WeatherForecastVm.SecondTabForecastData.Wind.Speed}"
                                     />
                                     <TextBox
@@ -432,21 +397,17 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="12"
-                                        Text="mp/h"
+                                        Text="m/s"
                                     />
                                     
                                 </TextBlock>
                                 <TextBlock Grid.Row="5"
                                            Margin="0,0,0,0">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Humidity:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/humidity.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                    />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -454,7 +415,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="30"
+                                        Width="70"
                                         Text="{Binding Path=WeatherForecastVm.SecondTabForecastData.Main.Humidity}"
                                     />
                                     <TextBox
@@ -514,15 +475,11 @@
                                     />
                                 </TextBlock>
                                 <TextBlock Grid.Row="1">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Temp:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/thermometer.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                        />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -530,7 +487,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="63"
+                                        Width="70"
                                         Text="{Binding Path=WeatherForecastVm.ThirdTabForecastData.Main.Temp}"
                                         />
                                     <TextBox
@@ -540,19 +497,15 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Text="K"
+                                        Text="°C"
                                         />
                                 </TextBlock>
                                 <TextBlock Grid.Row="2">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Clouds:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/cloudy-dau.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                    />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -560,7 +513,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="50"
+                                        Width="70"
                                         Text="{Binding Path=WeatherForecastVm.ThirdTabForecastData.Clouds.All}"
                                     />
                                     <TextBox
@@ -576,15 +529,11 @@
                                     
                                 </TextBlock>
                                 <TextBlock Grid.Row="3">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Rain:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/drop.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                    />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -592,7 +541,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="63"
+                                        Width="68"
                                         Text="{Binding Path=WeatherForecastVm.ThirdTabForecastData.Rain.ThreeH}"
                                     />
                                     <TextBox
@@ -608,15 +557,11 @@
                                     
                                 </TextBlock>
                                 <TextBlock Grid.Row="4">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Wind:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/wind-flag.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                    />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -624,7 +569,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="50"
+                                        Width="68"
                                         Text="{Binding Path=WeatherForecastVm.ThirdTabForecastData.Wind.Speed}"
                                     />
                                     <TextBox
@@ -634,21 +579,17 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="12"
-                                        Text="mp/h"
+                                        Text="m/s"
                                     />
                                     
                                 </TextBlock>
                                 <TextBlock Grid.Row="5"
                                            Margin="0,0,0,0">
-                                    <TextBox
-                                        IsReadOnly="True"
-                                        BorderThickness="0"
-                                        Margin="5,10,0,0"
-                                        Foreground="White"
-                                        Background="Black"
-                                        FontSize="18">
-                                        Humidity:
-                                    </TextBox>
+                                    <Image
+                                        Source="../../Images/humidity.png"
+                                        Margin="15,10,0,0"
+                                        Width="25"
+                                    />
                                     <TextBox
                                         IsReadOnly="True"
                                         BorderThickness="0"
@@ -656,7 +597,7 @@
                                         Foreground="White"
                                         Background="Black"
                                         FontSize="18"
-                                        Width="30"
+                                        Width="70"
                                         Text="{Binding Path=WeatherForecastVm.ThirdTabForecastData.Main.Humidity}"
                                     />
                                     <TextBox

@@ -19,9 +19,54 @@
       <None Remove="Images\information.png" />
       <Resource Include="Images\information.png" />
       <None Remove="Images\mountains.png" />
-      <Resource Include="Images\mountains.png" />
       <None Remove="Images\weatherForecast.png" />
       <Resource Include="Images\weatherForecast.png" />
+      <None Remove="Images\weatherForecastIcons\01n.png" />
+      <Resource Include="Images\weatherForecastIcons\01n.png" />
+      <None Remove="Images\weatherForecastIcons\02d.png" />
+      <Resource Include="Images\weatherForecastIcons\02d.png" />
+      <None Remove="Images\weatherForecastIcons\02n.png" />
+      <Resource Include="Images\weatherForecastIcons\02n.png" />
+      <None Remove="Images\weatherForecastIcons\03d.png" />
+      <Resource Include="Images\weatherForecastIcons\03d.png" />
+      <None Remove="Images\weatherForecastIcons\03n.png" />
+      <Resource Include="Images\weatherForecastIcons\03n.png" />
+      <None Remove="Images\weatherForecastIcons\04d.png" />
+      <Resource Include="Images\weatherForecastIcons\04d.png" />
+      <None Remove="Images\weatherForecastIcons\04n.png" />
+      <Resource Include="Images\weatherForecastIcons\04n.png" />
+      <None Remove="Images\weatherForecastIcons\09d.png" />
+      <Resource Include="Images\weatherForecastIcons\09d.png" />
+      <None Remove="Images\weatherForecastIcons\09n.png" />
+      <Resource Include="Images\weatherForecastIcons\09n.png" />
+      <None Remove="Images\weatherForecastIcons\10d.png" />
+      <Resource Include="Images\weatherForecastIcons\10d.png" />
+      <None Remove="Images\weatherForecastIcons\10n.png" />
+      <Resource Include="Images\weatherForecastIcons\10n.png" />
+      <None Remove="Images\weatherForecastIcons\11d.png" />
+      <Resource Include="Images\weatherForecastIcons\11d.png" />
+      <None Remove="Images\weatherForecastIcons\11n.png" />
+      <Resource Include="Images\weatherForecastIcons\11n.png" />
+      <None Remove="Images\weatherForecastIcons\13d.png" />
+      <Resource Include="Images\weatherForecastIcons\13d.png" />
+      <None Remove="Images\weatherForecastIcons\13n.png" />
+      <Resource Include="Images\weatherForecastIcons\13n.png" />
+      <None Remove="Images\weatherForecastIcons\50d.png" />
+      <Resource Include="Images\weatherForecastIcons\50d.png" />
+      <None Remove="Images\weatherForecastIcons\50n.png" />
+      <Resource Include="Images\weatherForecastIcons\50n.png" />
+      <None Remove="Images\cloudy-dau.png" />
+      <Resource Include="Images\cloudy-dau.png" />
+      <None Remove="Images\drop.png" />
+      <Resource Include="Images\drop.png" />
+      <None Remove="Images\humidity.png" />
+      <Resource Include="Images\humidity.png" />
+      <None Remove="Images\wind-flag.png" />
+      <Resource Include="Images\wind-flag.png" />
+      <None Remove="Images\thermometer.png" />
+      <Resource Include="Images\thermometer.png" />
+      <None Remove="Images\air-quality.png" />
+      <Resource Include="Images\air-quality.png" />
     </ItemGroup>
 
     <ItemGroup>
@@ -33,6 +78,11 @@
       <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
       <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Images\weatherForecastIcons\01d.png" />
+      <Resource Include="Images\weatherForecastIcons\01d.png" />
     </ItemGroup>
 
 </Project>

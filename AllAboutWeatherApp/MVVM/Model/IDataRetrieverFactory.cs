@@ -4,5 +4,5 @@ public interface IDataRetrieverFactory
 {
     ILocationDataRetriever CreateLocationDataRetriever();
     IWeatherDataRetriever CreateWeatherDataRetriever();
-//    IAirQualityDataRetriever CreateAirQualityDataRetriever();
+    IAirQualityDataRetriever CreateAirQualityDataRetriever();
 }

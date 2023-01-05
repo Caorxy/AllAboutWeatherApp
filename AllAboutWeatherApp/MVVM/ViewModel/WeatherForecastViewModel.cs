@@ -76,23 +76,14 @@ public class WeatherForecastViewModel : ObservableObject
     private void SetForecastData(OpenWeatherForecast? forecastData)
     {
         _currentPos = 0;
-        if (forecastData?.List != null)
-            foreach (var forecast in forecastData.List)
-            {
-                if (forecast.Rain == null)
-                    forecast.Rain = new RainData {ThreeH = 0};
-
-                forecast.PathToIcon = "https://openweathermap.org/img/wn/" + forecast.Weather[0].Icon + "@2x.png";
-            }
-
         _weatherForecastData = forecastData;
         SetTabsData();
     }
 
     private void SetTabsData()
     {
-        FirstTabForecastData = _weatherForecastData?.List[_currentPos];
-        SecondTabForecastData = _weatherForecastData?.List[_currentPos+1];
-        ThirdTabForecastData = _weatherForecastData?.List[_currentPos+2];
+        FirstTabForecastData = _weatherForecastData?.List![_currentPos];
+        SecondTabForecastData = _weatherForecastData?.List![_currentPos+1];
+        ThirdTabForecastData = _weatherForecastData?.List![_currentPos+2];
     }
 }

@@ -11,10 +11,10 @@ public class DataRetrieverFactory : IDataRetrieverFactory
     {
         return new WeatherDataRetriever();
     }
-    /*
+    
     public IAirQualityDataRetriever CreateAirQualityDataRetriever()
     {
         return new AirQualityDataRetriever();
     }
-    */
+    
 }
