@@ -7,13 +7,35 @@ namespace AllAboutWeatherApp.MVVM.ViewModel;
 public class WeatherForecastViewModel : ObservableObject
 {
     private OpenWeatherForecast? _weatherForecastData;
-
-    public OpenWeatherForecast? WeatherForecastData
+    private ForecastData? _firstTabForecastData;
+    private ForecastData? _secondTabForecastData;
+    private ForecastData? _thirdTabForecastData;
+    private int _currentPos;
+    
+    public ForecastData? FirstTabForecastData
     {
-        get => _weatherForecastData;
+        get => _firstTabForecastData;
         set
         {
-            _weatherForecastData = value;
+            _firstTabForecastData = value;
+            OnPropertyChanged();
+        }
+    }
+    public ForecastData? SecondTabForecastData
+    {
+        get => _secondTabForecastData;
+        set
+        {
+            _secondTabForecastData = value;
+            OnPropertyChanged();
+        }
+    }
+    public ForecastData? ThirdTabForecastData
+    {
+        get => _thirdTabForecastData;
+        set
+        {
+            _thirdTabForecastData = value;
             OnPropertyChanged();
         }
     }
@@ -35,6 +57,10 @@ public class WeatherForecastViewModel : ObservableObject
 
     private void SetForecastData(OpenWeatherForecast? forecastData)
     {
-        WeatherForecastData = forecastData;
+        _currentPos = 0;
+        _weatherForecastData = forecastData;
+        FirstTabForecastData = _weatherForecastData?.List[_currentPos];
+        SecondTabForecastData = _weatherForecastData?.List[_currentPos+1];
+        ThirdTabForecastData = _weatherForecastData?.List[_currentPos+2];
     }
 }
