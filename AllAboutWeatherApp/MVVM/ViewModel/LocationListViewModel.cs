@@ -12,8 +12,20 @@ public class LocationListViewModel : ObservableObject
     private LocationData? _locationData2;
     private LocationData? _locationData3;
     private LocationData? _locationData4;
+    private string? _purpose;
     public RelayCommand AccessWeatherForecastData { get; set; }
 
+    public string? Purpose
+    {
+        get => _purpose;
+        set
+        {
+            _purpose = value;
+            OnPropertyChanged();
+        }
+        
+    }
+    
     public LocationData? LocationData1
     {
         get => _locationData1;
@@ -80,13 +92,34 @@ public class LocationListViewModel : ObservableObject
             }
             searched.Lat = locationData?.Lat;
             searched.Lon = locationData?.Lon;
-            var forecastData = await repository.GetWeatherForecast(searched);
-
-            Mediator.Mediator.GetInstance().OnEvent(this, new ForecastDataMessage
+            
+            switch (Purpose)
             {
-                MessageType = "ForecastData",
-                ForecastData = forecastData
-            });
+                case "WeatherForecast" :
+                {
+                    var forecastData = await repository.GetWeatherForecast(searched);
+
+                    Mediator.Mediator.GetInstance().OnEvent(this, new ForecastDataMessage
+                    {
+                        MessageType = "ForecastData",
+                        ForecastData = forecastData
+                    });
+                    
+                }
+                    break;
+                case "AirQuality": 
+                {
+                    var airQualityData = await repository.GetAirQualityData(searched);
+
+                    Mediator.Mediator.GetInstance().OnEvent(this, new AirQualityDataMessage
+                    {
+                        MessageType = "AirQualityData",
+                        AirQualityData = airQualityData
+                    });
+                }
+                    break;
+            }
+            
         });
     }
 

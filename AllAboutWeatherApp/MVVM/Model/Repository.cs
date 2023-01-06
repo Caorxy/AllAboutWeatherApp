@@ -22,6 +22,12 @@ public class Repository : IRepository
     {
         IWeatherDataRetriever locationDataRetriever = _dataRetrieverFactory.CreateWeatherDataRetriever();
         return await locationDataRetriever.GetWeatherForecast(coordinates);
+    }    
+    
+    public async Task<AirQualityData> GetAirQualityData(GeoCoordinates coordinates)
+    {
+        IAirQualityDataRetriever airQualityDataRetriever = _dataRetrieverFactory.CreateAirQualityDataRetriever();
+        return await airQualityDataRetriever.GetAirQualityData(coordinates);
     }
 }
 

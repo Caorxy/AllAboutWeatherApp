@@ -7,4 +7,5 @@ public interface IRepository
 {
     public Task<IEnumerable<LocationData>> GetLocations(SearchedLocationData locationSearchData);
     public Task<OpenWeatherForecast> GetWeatherForecast(GeoCoordinates coordinates);
+    public Task<AirQualityData> GetAirQualityData(GeoCoordinates coordinates);
 }

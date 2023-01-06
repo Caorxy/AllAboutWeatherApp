@@ -17,3 +17,8 @@ public class ForecastDataMessage : MediatorMessage
 {
     public OpenWeatherForecast? ForecastData { get; set; }
 }
+
+public class AirQualityDataMessage : MediatorMessage
+{
+    public AirQualityData? AirQualityData { get; set; }
+}

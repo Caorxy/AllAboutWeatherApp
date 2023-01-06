@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -15,19 +15,71 @@ public class AirQualityDataRetriever : IAirQualityDataRetriever
         _apiKey = "005acbc1300f9c9027a264d7028893f6";
     }
 
-    public async Task<IEnumerable<AirQualityData>> GetAirQualityData(GeoCoordinates coordinates)
+    public async Task<AirQualityData> GetAirQualityData(GeoCoordinates coordinates)
     {
-        IEnumerable<AirQualityData> airQuality = null!;
-        string requestUri = GetGeoRequestUri(coordinates);
+        AirQualityData? airQuality = null!;
+        var now = DateTimeOffset.Now.ToUnixTimeSeconds();
+        var requestUri = GetGeoRequestUri(coordinates, now);
 
         HttpResponseMessage response = await _client.GetAsync(requestUri);
 
         if (response.IsSuccessStatusCode)
-            airQuality = await response.Content.ReadAsAsync<IEnumerable<AirQualityData>>();
+            airQuality = await response.Content.ReadAsAsync<AirQualityData>();
 
-        return airQuality;
+        return CorrectReceivedData(airQuality);
     }
 
-    private string GetGeoRequestUri(GeoCoordinates coordinates) =>
-        $"https://api.openweathermap.org/data/2.5/air_pollution?lat={coordinates.Lat}&lon={coordinates.Lon}&appid={_apiKey}";
+    private string GetGeoRequestUri(GeoCoordinates coordinates, long now) =>
+        $"https://api.openweathermap.org/data/2.5/air_pollution/history?lat={coordinates.Lat}&lon={coordinates.Lon}&start={now-43200}&end={now}&appid={_apiKey}";
+
+    private AirQualityData CorrectReceivedData(AirQualityData airQuality)
+    {
+        if (airQuality.List == null) return airQuality;
+        
+            if (airQuality.List[0].Main != null)
+            {
+                var mainAirQualityData = airQuality.List[0].Main;
+                if (mainAirQualityData != null)
+                    switch (mainAirQualityData.Aqi)
+                    {
+                        case 1:
+                        {
+                            mainAirQualityData.Color = "DarkGreen";
+                            mainAirQualityData.AqiText = "Good";
+                            mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/veryHappy.png";
+                        }
+                            break;
+                        case 2:
+                        {
+                            mainAirQualityData.Color = "YellowGreen";
+                            mainAirQualityData.AqiText = "Fair";
+                            mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/happy.png";
+                        }
+                            break;
+                        case 3:
+                        {
+                           mainAirQualityData.Color = "Yellow";
+                           mainAirQualityData.AqiText = "Moderate";
+                           mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/neutral.png";
+                        }
+                            break;
+                        case 4:
+                        {
+                            mainAirQualityData.Color = "Red";
+                            mainAirQualityData.AqiText = "Poor";
+                            mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/sad.png";
+                        }
+                            break;
+                        case 5:
+                        {
+                            mainAirQualityData.Color = "DarkRed";
+                            mainAirQualityData.AqiText = "Very Poor";
+                            mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/dead.png";
+                        }
+                            break;
+                    }
+            }
+
+            return airQuality;
+    }
 }

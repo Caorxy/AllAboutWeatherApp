@@ -25,7 +25,8 @@
         <Button Name="WeatherForecastButton" 
                 Margin="20,0,20, 10" 
                 Style="{StaticResource ButtonStyle}"
-                Command="{Binding ChooseLocationCommand}">
+                Command="{Binding ChooseLocationCommand}"
+                CommandParameter="WeatherForecast">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="15"/>
@@ -38,8 +39,10 @@
             </StackPanel>
         </Button>
         
-        <Button Name="MountainsButton" Grid.Row="0" Grid.Column="1" 
+        <Button Name="AirQualityButton" Grid.Row="0" Grid.Column="1" 
                 Margin="20,0,20, 10" 
+                Command="{Binding ChooseLocationCommand}"
+                CommandParameter="AirQuality"
                 Style="{StaticResource ButtonStyle}">
             <Button.Resources>
                 <Style TargetType="Border">

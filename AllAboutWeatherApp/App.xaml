@@ -21,6 +21,9 @@
             <DataTemplate DataType="{x:Type viewModel:WeatherForecastViewModel}">
                 <view:WeatherForecastView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AirQualityViewModel}">
+                <view:AirQualityView/>
+            </DataTemplate>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/ButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/HomeButtonTheme.xaml"/>
@@ -29,6 +32,7 @@
                 <ResourceDictionary Source="Theme/SubmitButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/LocationButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/NavButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/AirQualityTextTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

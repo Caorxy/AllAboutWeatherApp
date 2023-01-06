@@ -9,13 +9,15 @@ public class MainViewModel : ObservableObject
     public RelayCommand AboutViewCommand { get; set; }
     public RelayCommand ChooseLocationCommand { get; set; }
     public RelayCommand LocationListViewCommand { get; set; }
-    public RelayCommand WeatherForecastViewCommand { get; set; }
+    public RelayCommand DataViewCommand { get; set; }
+    public RelayCommand AirQualityViewCommand { get; set; }
 
     public HomeViewModel HomeVm { get; set; }
     public AboutViewModel AboutVm { get; set; }
     public LocationListViewModel LocationListVm { get; set; }
     public TypeLocationViewModel TypeLocationVm { get; set; }
     public WeatherForecastViewModel WeatherForecastVm { get; set; }
+    public AirQualityViewModel AirQualityVm { get; set; }
     private object? _currentView;
 
     public object? CurrentView
@@ -38,6 +40,7 @@ public class MainViewModel : ObservableObject
         LocationListVm = new LocationListViewModel(repository);
         TypeLocationVm = new TypeLocationViewModel(repository);
         WeatherForecastVm = new  WeatherForecastViewModel();
+        AirQualityVm = new  AirQualityViewModel();
         CurrentView = HomeVm;
 
         HomeViewCommand = new RelayCommand(_ =>
@@ -50,20 +53,35 @@ public class MainViewModel : ObservableObject
             CurrentView = AboutVm;
         });
         
-        ChooseLocationCommand = new RelayCommand(_ =>
+        ChooseLocationCommand = new RelayCommand(o =>
         {
+            LocationListVm.Purpose = o as string;
             CurrentView = TypeLocationVm;
         });        
                 
-        WeatherForecastViewCommand = new RelayCommand(_ =>
+        DataViewCommand = new RelayCommand(_ =>
         {
-            CurrentView = WeatherForecastVm;
+            switch (LocationListVm.Purpose)
+            {
+                case "WeatherForecast" : CurrentView = WeatherForecastVm;
+                    break;
+                case "AirQuality" : CurrentView = AirQualityVm;
+                    break;
+            }
+            
         });        
         
         LocationListViewCommand = new RelayCommand( _ =>
         {
             CurrentView = LocationListVm;
+        });  
+        
+        AirQualityViewCommand = new RelayCommand( _ =>
+        {
+            CurrentView = AirQualityVm;
         });
+        
+        
 
     }
 }

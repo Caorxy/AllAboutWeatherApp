@@ -13,6 +13,11 @@
 
     <ItemGroup>
       <None Remove="Images\weather.png" />
+      <Resource Include="Images\airQualityIndex\dead.png" />
+      <Resource Include="Images\airQualityIndex\happy.png" />
+      <Resource Include="Images\airQualityIndex\veryHappy.png" />
+      <Resource Include="Images\airQualityIndex\neutral.png" />
+      <Resource Include="Images\airQualityIndex\sad.png" />
       <Resource Include="Images\weather.png" />
       <None Remove="Images\analysing.png" />
       <Resource Include="Images\analysing.png" />
@@ -67,6 +72,11 @@
       <Resource Include="Images\thermometer.png" />
       <None Remove="Images\air-quality.png" />
       <Resource Include="Images\air-quality.png" />
+      <None Remove="Images\dead.png" />
+      <None Remove="Images\happy.png" />
+      <None Remove="Images\happy-face.png" />
+      <None Remove="Images\neutral.png" />
+      <None Remove="Images\sad.png" />
     </ItemGroup>
 
     <ItemGroup>
@@ -75,14 +85,20 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="DotNetProjects.WpfToolkit.DataVisualization" Version="6.1.94" />
       <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-      <PackageReference Include="Prism.Wpf" Version="8.1.97" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Images\weatherForecastIcons\01d.png" />
       <Resource Include="Images\weatherForecastIcons\01d.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+        <HintPath>..\..\..\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.31\lib\net5.0-windows7.0\Microsoft.Xaml.Behaviors.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

@@ -5,5 +5,5 @@ namespace AllAboutWeatherApp.MVVM.Model;
 
 public interface IAirQualityDataRetriever
 {
-    Task<IEnumerable<AirQualityData>> GetAirQualityData(GeoCoordinates coordinates);
+    Task<AirQualityData> GetAirQualityData(GeoCoordinates coordinates);
 }

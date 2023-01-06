@@ -147,13 +147,12 @@
                                 RelativeSource={RelativeSource AncestorType=UserControl},
                                 Path=DataContext.LocationListVm.AccessWeatherForecastData}"
                                                    CommandParameter="1"/>
-                            <b:InvokeCommandAction Command="{Binding WeatherForecastViewCommand}"/>
+                            <b:InvokeCommandAction Command="{Binding DataViewCommand}"/>
                         </b:EventTrigger>
                     </b:Interaction.Triggers>
                 </Button>
                 
                 <Button
-                    Command="{Binding WeatherForecastViewCommand}"
                     Style="{StaticResource LocationButtonStyle}">
                     <Button.Content>
                         <Grid
@@ -266,13 +265,12 @@
                                 RelativeSource={RelativeSource AncestorType=UserControl},
                                 Path=DataContext.LocationListVm.AccessWeatherForecastData}"
                                                    CommandParameter="2"/>
-                            <b:InvokeCommandAction Command="{Binding WeatherForecastViewCommand}"/>
+                            <b:InvokeCommandAction Command="{Binding DataViewCommand}"/>
                         </b:EventTrigger>
                     </b:Interaction.Triggers>
                 </Button>
                 
                 <Button
-                    Command="{Binding WeatherForecastViewCommand}"
                     Style="{StaticResource LocationButtonStyle}">
                     <Button.Content>
                         <Grid
@@ -385,13 +383,12 @@
                                 RelativeSource={RelativeSource AncestorType=UserControl},
                                 Path=DataContext.LocationListVm.AccessWeatherForecastData}"
                                                    CommandParameter="3"/>
-                            <b:InvokeCommandAction Command="{Binding WeatherForecastViewCommand}"/>
+                            <b:InvokeCommandAction Command="{Binding DataViewCommand}"/>
                         </b:EventTrigger>
                     </b:Interaction.Triggers>
                 </Button>
                 
                 <Button
-                    Command="{Binding WeatherForecastViewCommand}"
                     Style="{StaticResource LocationButtonStyle}">
                     <Button.Content>
                         <Grid
@@ -504,7 +501,7 @@
                                 RelativeSource={RelativeSource AncestorType=UserControl},
                                 Path=DataContext.LocationListVm.AccessWeatherForecastData}"
                                                    CommandParameter="4"/>
-                            <b:InvokeCommandAction Command="{Binding WeatherForecastViewCommand}"/>
+                            <b:InvokeCommandAction Command="{Binding DataViewCommand}"/>
                         </b:EventTrigger>
                     </b:Interaction.Triggers>
                 </Button>
