@@ -43,7 +43,7 @@ public class MainViewModel : ObservableObject
         TypeLocationVm = new TypeLocationViewModel(repository);
         WeatherForecastVm = new  WeatherForecastViewModel();
         AirQualityVm = new  AirQualityViewModel();
-        StatisticsVm = new  StatisticsViewModel();
+        StatisticsVm = new  StatisticsViewModel(repository);
         CurrentView = HomeVm;
 
         HomeViewCommand = new RelayCommand(_ =>

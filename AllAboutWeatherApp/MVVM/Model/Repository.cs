@@ -28,6 +28,14 @@ public class Repository : IRepository
     {
         IAirQualityDataRetriever airQualityDataRetriever = _dataRetrieverFactory.CreateAirQualityDataRetriever();
         return await airQualityDataRetriever.GetAirQualityData(coordinates);
+    }  
+    
+    public async Task<IEnumerable<LocationData>> GetLocations(GeoCoordinates coordinates)
+    {
+        IReverseLocationDataRetriever locationDataRetriever =
+            _dataRetrieverFactory.CreateReverseLocationDataRetriever();
+        return await locationDataRetriever.GetLocations(coordinates);
     }
+    
 }
 

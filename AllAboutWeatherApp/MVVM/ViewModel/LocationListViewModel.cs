@@ -89,8 +89,11 @@ public class LocationListViewModel : ObservableObject
                 "4" => _locationData4,
                 _ => _locationData1
             };
-            searched.Lat = locationData?.Lat;
-            searched.Lon = locationData?.Lon;
+            if (locationData != null && locationData.Lat != null && locationData.Lon != null)
+            {
+                searched.Lat = (double) locationData.Lat;
+                searched.Lon = (double) locationData.Lon;
+            }
 
             var context = new Context(new Repository(new DataRetrieverFactory()));
             switch (Purpose)

@@ -30,7 +30,7 @@ public class WeatherDataRetriever : IWeatherDataRetriever
 
 
     private string GetGeoRequestUri(GeoCoordinates coordinates) =>
-        $"https://api.openweathermap.org/data/2.5/forecast?lat={coordinates.Lat}&lon={coordinates.Lon}&appid={_apiKey}&units=metric";
+        $"https://api.openweathermap.org/data/2.5/forecast?lat={coordinates.Lat.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)}&lon={coordinates.Lon.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)}&appid={_apiKey}&units=metric";
 
     private OpenWeatherForecast CorrectReceivedData(OpenWeatherForecast forecastData)
     {

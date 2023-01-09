@@ -17,4 +17,9 @@ public class DataRetrieverFactory : IDataRetrieverFactory
         return new AirQualityDataRetriever();
     }
     
+    public IReverseLocationDataRetriever CreateReverseLocationDataRetriever()
+    {
+        return new ReverseLocationDataRetriever();
+    }
+
 }

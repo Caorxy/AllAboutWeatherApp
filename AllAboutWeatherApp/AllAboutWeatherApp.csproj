@@ -20,7 +20,6 @@
       <Resource Include="Images\airQualityIndex\sad.png" />
       <Resource Include="Images\weather.png" />
       <None Remove="Images\analysing.png" />
-      <Resource Include="Images\analysing.png" />
       <None Remove="Images\information.png" />
       <Resource Include="Images\information.png" />
       <None Remove="Images\mountains.png" />
@@ -77,6 +76,8 @@
       <None Remove="Images\sad.png" />
       <None Remove="Images\weatherForecastIcons\04d.png" />
       <Resource Include="Images\weatherForecastIcons\04d.png" />
+      <None Remove="Images\surprise-box.png" />
+      <Resource Include="Images\surprise-box.png" />
     </ItemGroup>
 
     <ItemGroup>
