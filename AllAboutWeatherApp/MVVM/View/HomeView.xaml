@@ -55,11 +55,10 @@
                 <TextBlock FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="DemiBold" Margin="0,10,0,5">Air Quality</TextBlock>
             </StackPanel>
         </Button>
-        <Button Name="AnalysisButton" Grid.Row="1" Grid.Column="0" 
-                IsEnabled="False"
-                Opacity="0.5"
+        <Button Name="AnalysisButton" Grid.Row="1" Grid.Column="0"
                 Margin="20,10,20, 0" 
-                Command="{Binding StatisticsViewCommand}"
+                Command="{Binding ChooseLocationCommand}"
+                CommandParameter="Statistics"
                 Style="{StaticResource ButtonStyle}">
             <Button.Resources>
                 <Style TargetType="Border">
@@ -69,14 +68,15 @@
             <StackPanel>
                 <Image Source="../../Images/analysing.png"
                        Height="120" />
-                <TextBlock FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="DemiBold" Margin="0,10,0,5">Analysis</TextBlock>
+                <TextBlock FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="DemiBold" Margin="0,10,0,5">Statistics</TextBlock>
             </StackPanel>
         </Button>
         
-        <Button Name="AboutAppButton" Grid.Row="1" Grid.Column="1" 
+        <Button Name="AboutAppButton" Grid.Row="1" Grid.Column="1"
                 Margin="20,10,20, 0" 
                 Style="{StaticResource ButtonStyle}"
-                Command="{Binding AboutViewCommand}">
+                Command="{Binding AboutViewCommand}"
+                >
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="15"/>

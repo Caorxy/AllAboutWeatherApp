@@ -5,5 +5,5 @@ namespace AllAboutWeatherApp.MVVM.Model;
 public class SearchedLocationData
 {
     [Required]
-        public string? Location { get; set; }
+        public string? Location { get; init; }
 }

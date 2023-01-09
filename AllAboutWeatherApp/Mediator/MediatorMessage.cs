@@ -22,3 +22,7 @@ public class AirQualityDataMessage : MediatorMessage
 {
     public AirQualityData? AirQualityData { get; set; }
 }
+public class StatisticsDataMessage : MediatorMessage
+{
+    public StatisticsData? StatisticsData { get; set; }
+}

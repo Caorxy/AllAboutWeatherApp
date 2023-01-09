@@ -1,10 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using AllAboutWeatherApp.MVVM.ViewModel;
 
 namespace AllAboutWeatherApp.MVVM.View;
 
-public partial class TypeLocationView : UserControl
+public partial class TypeLocationView
 {
     public TypeLocationView()
     {

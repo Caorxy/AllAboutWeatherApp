@@ -12,8 +12,7 @@ public class TypeLocationViewModel
     {
         AccessLocationData = new RelayCommand(async o =>
         {
-            var searched = new SearchedLocationData();
-            searched.Location = o as string;
+            var searched = new SearchedLocationData { Location = o as string };
             var locationData = await repository.GetLocations(searched);
 
             Mediator.Mediator.GetInstance().OnEvent(this, new LocationDataMessage

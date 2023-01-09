@@ -30,7 +30,7 @@ public class LocationListViewModel : ObservableObject
     public LocationData? LocationData1
     {
         get => _locationData1;
-        set { 
+        private set { 
             _locationData1 = value;
             OnPropertyChanged();
         }
@@ -39,7 +39,7 @@ public class LocationListViewModel : ObservableObject
     public LocationData? LocationData2 
     {
         get => _locationData2;
-        set { 
+        private set { 
             _locationData2 = value;
             OnPropertyChanged();
         }
@@ -47,7 +47,7 @@ public class LocationListViewModel : ObservableObject
     public LocationData? LocationData3 
     {
         get => _locationData3;
-        set { 
+        private set { 
             _locationData3 = value;
             OnPropertyChanged();
         }
@@ -55,7 +55,7 @@ public class LocationListViewModel : ObservableObject
     public LocationData? LocationData4 
     {
         get => _locationData4;
-        set { 
+        private set { 
             _locationData4 = value;
             OnPropertyChanged();
         }
@@ -67,7 +67,7 @@ public class LocationListViewModel : ObservableObject
         Mediator.Mediator.GetInstance().Event += (_, e) =>
         {
             // Check the message type to determine if the message is intended for this view model
-            if (e is MediatorMessage message && message.MessageType == "LocationData")
+            if (e is MediatorMessage {MessageType: "LocationData"} message)
             {
                 // Update the LocationData properties with the location data from the message
                 var locationDataMessage = (LocationDataMessage) message;
@@ -79,9 +79,9 @@ public class LocationListViewModel : ObservableObject
         AccessWeatherForecastData = new RelayCommand( o =>
         {
             var searched = new GeoCoordinates();
-            var choosenOption = o as string;
+            var chosenOption = o as string;
 
-            var locationData = choosenOption switch
+            var locationData = chosenOption switch
             {
                 "1" => _locationData1,
                 "2" => _locationData2,
@@ -97,10 +97,10 @@ public class LocationListViewModel : ObservableObject
             {
                 case "WeatherForecast" : { context.SetStrategy(new WeatherForecastStrategy()); } break;
                 case "AirQuality": { context.SetStrategy(new AirQualityStrategy()); } break;
+                case "Statistics": { context.SetStrategy(new StatisticsStrategy()); } break;
             }
             
             context.ExecuteStrategy(searched);
-            
         });
     }
 

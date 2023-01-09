@@ -17,7 +17,7 @@ public class WeatherForecastViewModel : ObservableObject
     public ForecastData? FirstTabForecastData
     {
         get => _firstTabForecastData;
-        set
+        private set
         {
             _firstTabForecastData = value;
             OnPropertyChanged();
@@ -26,7 +26,7 @@ public class WeatherForecastViewModel : ObservableObject
     public ForecastData? SecondTabForecastData
     {
         get => _secondTabForecastData;
-        set
+        private set
         {
             _secondTabForecastData = value;
             OnPropertyChanged();
@@ -35,7 +35,7 @@ public class WeatherForecastViewModel : ObservableObject
     public ForecastData? ThirdTabForecastData
     {
         get => _thirdTabForecastData;
-        set
+        private set
         {
             _thirdTabForecastData = value;
             OnPropertyChanged();
@@ -48,7 +48,7 @@ public class WeatherForecastViewModel : ObservableObject
         Mediator.Mediator.GetInstance().Event += (_, e) =>
         {
             // Check the message type to determine if the message is intended for this view model
-            if (e is MediatorMessage message && message.MessageType == "ForecastData")
+            if (e is MediatorMessage {MessageType: "ForecastData"} message)
             {
                 // Update the LocationData properties with the location data from the message
                 var forecastDataMessage = (ForecastDataMessage) message;

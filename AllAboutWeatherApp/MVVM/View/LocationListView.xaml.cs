@@ -1,9 +1,7 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
-
 namespace AllAboutWeatherApp.MVVM.View;
 
-public partial class LocationListView : UserControl
+public partial class LocationListView 
 {
     public LocationListView()
     {

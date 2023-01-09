@@ -80,22 +80,24 @@
                 <StackPanel>
                     <TextBlock
                         TextWrapping="Wrap"
-                           TextAlignment="Center"
-                           VerticalAlignment="Top"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
                            FontSize="20"
-                           Padding="20, 40,20,20"
+                           Padding="0, 30,0,0"
                            Foreground="White"
                            LineHeight="30"
-                           LineStackingStrategy="BlockLineHeight">
-                    Welcome to our weather forecast app! We provide accurate and up-to-date weather information for locations around the world.
-                </TextBlock>
+                           Height="100"
+                        LineStackingStrategy="BlockLineHeight">
+                        All data comes from <Hyperlink Style="{StaticResource HyperlinkStyle}" NavigateUri="https://www.flaticon.com/free-icons/climate" Command="{Binding AboutVm.HyperlinkCommand}" CommandParameter="https://www.flaticon.com/free-icons/climate">OpenWeatherMap</Hyperlink> <LineBreak />
+                    </TextBlock>
                     <TextBlock 
                         LineHeight="15"
                         LineStackingStrategy="BlockLineHeight"
                         TextWrapping="Wrap"
                         TextAlignment="Left"
-                        VerticalAlignment="Center"
-                        Padding="20,10,0,10"
+                        VerticalAlignment="Top"
+                        Padding="20,0,20,0"
+                        Height="200"
                         FontSize="10"
                         Foreground="White"
                         >

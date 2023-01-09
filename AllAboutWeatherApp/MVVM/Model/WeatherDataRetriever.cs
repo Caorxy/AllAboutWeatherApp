@@ -37,7 +37,7 @@ public class WeatherDataRetriever : IWeatherDataRetriever
         if (forecastData.List != null)
             foreach (var forecast in forecastData.List)
             {
-                if (forecast != null && forecast.Rain == null)
+                if (forecast is {Rain: null})
                     forecast.Rain = new RainData {ThreeH = 0};
 
                 forecast!.PathToIcon = "../../Images/weatherForecastIcons/" + forecast.Weather![0].Icon + ".png";

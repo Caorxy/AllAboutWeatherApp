@@ -10,10 +10,8 @@ public class MainViewModel : ObservableObject
     public RelayCommand ChooseLocationCommand { get; set; }
     public RelayCommand LocationListViewCommand { get; set; }
     public RelayCommand DataViewCommand { get; set; }
-    public RelayCommand AirQualityViewCommand { get; set; }
-    public RelayCommand StatisticsViewCommand { get; set; }
 
-    public HomeViewModel HomeVm { get; set; }
+    private HomeViewModel HomeVm { get; set; }
     public AboutViewModel AboutVm { get; set; }
     public LocationListViewModel LocationListVm { get; set; }
     public TypeLocationViewModel TypeLocationVm { get; set; }
@@ -43,7 +41,7 @@ public class MainViewModel : ObservableObject
         TypeLocationVm = new TypeLocationViewModel(repository);
         WeatherForecastVm = new  WeatherForecastViewModel();
         AirQualityVm = new  AirQualityViewModel();
-        StatisticsVm = new  StatisticsViewModel();
+        StatisticsVm = new StatisticsViewModel();
         CurrentView = HomeVm;
 
         HomeViewCommand = new RelayCommand(_ =>
@@ -69,6 +67,8 @@ public class MainViewModel : ObservableObject
                 case "WeatherForecast" : CurrentView = WeatherForecastVm;
                     break;
                 case "AirQuality" : CurrentView = AirQualityVm;
+                    break; 
+                case "Statistics" : CurrentView = StatisticsVm;
                     break;
             }
             
@@ -77,16 +77,6 @@ public class MainViewModel : ObservableObject
         LocationListViewCommand = new RelayCommand( _ =>
         {
             CurrentView = LocationListVm;
-        });  
-        
-        AirQualityViewCommand = new RelayCommand( _ =>
-        {
-            CurrentView = AirQualityVm;
-        });       
-        
-        StatisticsViewCommand = new RelayCommand( _ =>
-        {
-            CurrentView = StatisticsVm;
         });
 
     }

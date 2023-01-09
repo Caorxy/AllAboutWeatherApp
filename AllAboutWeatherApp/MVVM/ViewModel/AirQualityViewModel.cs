@@ -13,7 +13,7 @@ public class AirQualityViewModel : ObservableObject
     private Dictionary<string, double>? _pm25data;
     private Dictionary<string, double>? _pm10data;
 
-    public AirQualityData? AirQuality
+    private AirQualityData? AirQuality
     {
         get => _airQuality;
         set
@@ -25,7 +25,7 @@ public class AirQualityViewModel : ObservableObject
     public AirPollutionData? MainAirPollutionData
     {
         get => _mainAirPollutionData;
-        set
+        private set
         {
             _mainAirPollutionData = value; 
             OnPropertyChanged();
@@ -58,24 +58,22 @@ public class AirQualityViewModel : ObservableObject
         Mediator.Mediator.GetInstance().Event += (_, e) =>
         {
             // Check the message type to determine if the message is intended for this view model
-            if (e is MediatorMessage message && message.MessageType == "AirQualityData")
+            if (e is not MediatorMessage {MessageType: "AirQualityData"} message) return;
+            // Update the AirQualityData properties with the data from the message
+            var airQualityDataMessage = (AirQualityDataMessage) message;
+            AirQuality = airQualityDataMessage.AirQualityData;
+            MainAirPollutionData = AirQuality?.List?[^1];
+            var dic1 = new Dictionary<string, double>();
+            var dic2 = new Dictionary<string, double>();
+            if (AirQuality?.List == null) return;
+            foreach (var data in AirQuality.List.Where(data => data.Components != null))
             {
-                // Update the AirQualityData properties with the data from the message
-                var airQualityDataMessage = (AirQualityDataMessage) message;
-                AirQuality = airQualityDataMessage.AirQualityData;
-                MainAirPollutionData = AirQuality?.List?[^1];
-                var dic1 = new Dictionary<string, double>();
-                var dic2 = new Dictionary<string, double>();
-                if (AirQuality?.List == null) return;
-                foreach (var data in AirQuality.List.Where(data => data.Components != null))
-                {
-                    if (data.Components == null) continue;
-                    dic1?.Add(data.DtFormat.TimeOfDay.ToString()[..5], data.Components.Pm2_5); 
-                    dic2?.Add(data.DtFormat.TimeOfDay.ToString()[..5], data.Components.Pm10); 
-                }
-                Pm25Data = dic1;
-                Pm10Data = dic2;
+                if (data.Components == null) continue;
+                dic1?.Add(data.DtFormat.TimeOfDay.ToString()[..5], data.Components.Pm2_5); 
+                dic2?.Add(data.DtFormat.TimeOfDay.ToString()[..5], data.Components.Pm10); 
             }
+            Pm25Data = dic1;
+            Pm10Data = dic2;
         };
     }
 
