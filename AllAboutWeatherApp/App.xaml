@@ -24,6 +24,9 @@
             <DataTemplate DataType="{x:Type viewModel:AirQualityViewModel}">
                 <view:AirQualityView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:StatisticsViewModel}">
+                <view:StatisticsView/>
+            </DataTemplate>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/ButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/HomeButtonTheme.xaml"/>

@@ -10,8 +10,8 @@ public class AirQualityViewModel : ObservableObject
 {
     private AirQualityData? _airQuality;
     private AirPollutionData? _mainAirPollutionData;
-    private Dictionary<double, double>? _pm25data;
-    private Dictionary<double, double>? _pm10data;
+    private Dictionary<string, double>? _pm25data;
+    private Dictionary<string, double>? _pm10data;
 
     public AirQualityData? AirQuality
     {
@@ -32,7 +32,7 @@ public class AirQualityViewModel : ObservableObject
         }
     }
 
-    public Dictionary<double, double>? Pm25Data
+    public Dictionary<string, double>? Pm25Data
     {
         get => _pm25data;
         set
@@ -42,7 +42,7 @@ public class AirQualityViewModel : ObservableObject
         }
     }
     
-    public Dictionary<double, double>? Pm10Data
+    public Dictionary<string, double>? Pm10Data
     {
         get => _pm10data;
         set
@@ -63,16 +63,18 @@ public class AirQualityViewModel : ObservableObject
                 // Update the AirQualityData properties with the data from the message
                 var airQualityDataMessage = (AirQualityDataMessage) message;
                 AirQuality = airQualityDataMessage.AirQualityData;
-                MainAirPollutionData = AirQuality?.List?[0];
-                Pm25Data = new Dictionary<double, double>();
-                Pm10Data = new Dictionary<double, double>();
+                MainAirPollutionData = AirQuality?.List?[^1];
+                var dic1 = new Dictionary<string, double>();
+                var dic2 = new Dictionary<string, double>();
                 if (AirQuality?.List == null) return;
                 foreach (var data in AirQuality.List.Where(data => data.Components != null))
                 {
                     if (data.Components == null) continue;
-                    Pm25Data.Add(data.Components.Pm2_5, data.Dt);
-                    Pm10Data.Add(data.Components.Pm10, data.Dt);
+                    dic1?.Add(data.DtFormat.TimeOfDay.ToString()[..5], data.Components.Pm2_5); 
+                    dic2?.Add(data.DtFormat.TimeOfDay.ToString()[..5], data.Components.Pm10); 
                 }
+                Pm25Data = dic1;
+                Pm10Data = dic2;
             }
         };
     }

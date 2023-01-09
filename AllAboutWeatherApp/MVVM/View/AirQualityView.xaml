@@ -6,9 +6,10 @@
              xmlns:local="clr-namespace:AllAboutWeatherApp.MVVM.View"
              xmlns:viewModel="clr-namespace:AllAboutWeatherApp.MVVM.ViewModel"
              xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=DotNetProjects.DataVisualization.Toolkit"
+             xmlns:visualizationToolkit="clr-namespace:System.Windows.Controls.DataVisualization;assembly=DotNetProjects.DataVisualization.Toolkit"
              mc:Ignorable="d"
              d:DesignHeight="525" d:DesignWidth="700"
-             FontFamily="Fonts/#Lato">
+             FontFamily="../../Fonts/#Lato">
     <UserControl.DataContext>
         <viewModel:MainViewModel />
     </UserControl.DataContext>
@@ -175,13 +176,45 @@
                                Text="{Binding AirQualityVm.MainAirPollutionData.Main.AqiText}"/>
                 </Grid>
                 
-                <chartingToolkit:Chart Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="MyChart" Title="My Chart">
-                    <chartingToolkit:LineSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding AirQualityVm.Pm25Data}" />
+                <chartingToolkit:Chart Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"   Background="Black" Foreground="White" 
+                                       Height="150" Width="350" Margin="0,0,15,0" FontSize="7">
+                    <chartingToolkit:AreaSeries Opacity="1" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding AirQualityVm.Pm25Data}"/>
+                    <chartingToolkit:Chart.LegendStyle>
+                        <Style TargetType="visualizationToolkit:Legend">
+                            <Setter Property="Width" Value="0" />
+                        </Style>
+                    </chartingToolkit:Chart.LegendStyle> 
                 </chartingToolkit:Chart>
                 
-                <chartingToolkit:Chart Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Name="MyChart2" Title="My Chart">
-                    <chartingToolkit:LineSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding AirQualityVm.Pm10Data}" />
+                <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           Text="PM2.5"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           Margin="0,20,0,0"
+                />
+
+                <chartingToolkit:Chart Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"   Background="Black" Foreground="White" 
+                                       Height="150" Width="350" Margin="0,0,15,0" FontSize="7">
+                    <chartingToolkit:AreaSeries Opacity="1" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding AirQualityVm.Pm10Data}"/>
+                    <chartingToolkit:Chart.LegendStyle>
+                        <Style TargetType="visualizationToolkit:Legend">
+                            <Setter Property="Width" Value="0" />
+                        </Style>
+                    </chartingToolkit:Chart.LegendStyle> 
                 </chartingToolkit:Chart>
+                
+                <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           Text="PM10"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           Margin="0,20,0,0"
+                />
 
             </Grid>
         </Border>

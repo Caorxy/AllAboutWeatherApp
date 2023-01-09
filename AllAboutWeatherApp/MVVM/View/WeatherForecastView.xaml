@@ -78,7 +78,7 @@
                         BorderThickness="3">
                         <Grid>
                             <Image
-                                Height="120"
+                                Height="110"
                                 VerticalAlignment="Top"
                                 Margin="0,20,0,0"
                                 Source="{Binding WeatherForecastVm.FirstTabForecastData.PathToIcon}">
@@ -260,7 +260,7 @@
                         BorderThickness="3">
                         <Grid>
                             <Image
-                                Height="120"
+                                Height="110"
                                 VerticalAlignment="Top"
                                 Margin="0,20,0,0"
                                 Source="{Binding WeatherForecastVm.SecondTabForecastData.PathToIcon}">
@@ -442,7 +442,7 @@
                         BorderThickness="3">
                         <Grid>
                             <Image
-                                Height="120"
+                                Height="110"
                                 VerticalAlignment="Top"
                                 Margin="0,20,0,0"
                                 Source="{Binding WeatherForecastVm.ThirdTabForecastData.PathToIcon}">

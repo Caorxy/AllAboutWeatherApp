@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace AllAboutWeatherApp.MVVM.Model;
 
@@ -11,6 +12,7 @@ public class AirQualityData
 public class AirPollutionData
 {
     public long Dt { get; set; }
+    public DateTime DtFormat { get; set; }
     public MainAirQualityData? Main { get; set; }
     public ComponentsData? Components { get; set; }
 }

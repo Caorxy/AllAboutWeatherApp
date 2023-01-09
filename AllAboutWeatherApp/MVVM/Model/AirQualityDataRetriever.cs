@@ -35,51 +35,55 @@ public class AirQualityDataRetriever : IAirQualityDataRetriever
     private AirQualityData CorrectReceivedData(AirQualityData airQuality)
     {
         if (airQuality.List == null) return airQuality;
-        
-            if (airQuality.List[0].Main != null)
-            {
-                var mainAirQualityData = airQuality.List[0].Main;
-                if (mainAirQualityData != null)
-                    switch (mainAirQualityData.Aqi)
-                    {
-                        case 1:
-                        {
-                            mainAirQualityData.Color = "DarkGreen";
-                            mainAirQualityData.AqiText = "Good";
-                            mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/veryHappy.png";
-                        }
-                            break;
-                        case 2:
-                        {
-                            mainAirQualityData.Color = "YellowGreen";
-                            mainAirQualityData.AqiText = "Fair";
-                            mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/happy.png";
-                        }
-                            break;
-                        case 3:
-                        {
-                           mainAirQualityData.Color = "Yellow";
-                           mainAirQualityData.AqiText = "Moderate";
-                           mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/neutral.png";
-                        }
-                            break;
-                        case 4:
-                        {
-                            mainAirQualityData.Color = "Red";
-                            mainAirQualityData.AqiText = "Poor";
-                            mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/sad.png";
-                        }
-                            break;
-                        case 5:
-                        {
-                            mainAirQualityData.Color = "DarkRed";
-                            mainAirQualityData.AqiText = "Very Poor";
-                            mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/dead.png";
-                        }
-                            break;
-                    }
-            }
 
-            return airQuality;
+        if (airQuality.List[^1].Main == null) return airQuality;
+        var mainAirQualityData = airQuality.List[^1].Main;
+        foreach (var airQualityData in airQuality.List)
+        {
+            var dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            dateTime = dateTime.AddSeconds( airQualityData.Dt ).ToLocalTime();
+            airQualityData.DtFormat = dateTime;
+        }
+        if (mainAirQualityData == null) return airQuality;
+        switch (mainAirQualityData.Aqi)
+        {
+            case 1:
+            {
+                mainAirQualityData.Color = "DarkGreen";
+                mainAirQualityData.AqiText = "Good";
+                mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/veryHappy.png";
+            }
+                break;
+            case 2:
+            {
+                mainAirQualityData.Color = "YellowGreen";
+                mainAirQualityData.AqiText = "Fair";
+                mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/happy.png";
+            }
+                break;
+            case 3:
+            {
+                mainAirQualityData.Color = "Yellow";
+                mainAirQualityData.AqiText = "Moderate";
+                mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/neutral.png";
+            }
+                break;
+            case 4:
+            {
+                mainAirQualityData.Color = "Red";
+                mainAirQualityData.AqiText = "Poor";
+                mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/sad.png";
+            }
+                break;
+            case 5:
+            {
+                mainAirQualityData.Color = "DarkRed";
+                mainAirQualityData.AqiText = "Very Poor";
+                mainAirQualityData.PathToIcon = "../../Images/airQualityIndex/dead.png";
+            }
+                break;
+        }
+
+        return airQuality;
     }
 }

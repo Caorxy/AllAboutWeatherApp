@@ -54,15 +54,14 @@
                     </TextBox.Resources>
                 </TextBox>
                 <Button
+                    IsDefault="True"
                     FontSize="17"
                     FontWeight="DemiBold"
                     Style="{StaticResource SubmitButtonStyle}"
                 >
                     <b:Interaction.Triggers>
                         <b:EventTrigger EventName="Click">
-                            <b:InvokeCommandAction Command="{Binding 
-                            RelativeSource={RelativeSource AncestorType=UserControl},
-                            Path=DataContext.TypeLocationVm.AccessLocationData}"
+                            <b:InvokeCommandAction Command="{Binding TypeLocationVm.AccessLocationData}"
                                                    CommandParameter="{Binding Text,ElementName=LocationTyped}"/>
                             <b:InvokeCommandAction Command="{Binding LocationListViewCommand}"/>
                         </b:EventTrigger>

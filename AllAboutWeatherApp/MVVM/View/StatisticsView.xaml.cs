@@ -3,9 +3,9 @@ using System.Windows.Controls;
 
 namespace AllAboutWeatherApp.MVVM.View;
 
-public partial class AboutView : UserControl
+public partial class StatisticsView : UserControl
 {
-    public AboutView()
+    public StatisticsView()
     {
         InitializeComponent();
         DataContext = Application.Current.MainWindow?.DataContext;

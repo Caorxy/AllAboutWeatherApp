@@ -56,7 +56,10 @@
             </StackPanel>
         </Button>
         <Button Name="AnalysisButton" Grid.Row="1" Grid.Column="0" 
+                IsEnabled="False"
+                Opacity="0.5"
                 Margin="20,10,20, 0" 
+                Command="{Binding StatisticsViewCommand}"
                 Style="{StaticResource ButtonStyle}">
             <Button.Resources>
                 <Style TargetType="Border">

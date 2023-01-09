@@ -143,9 +143,7 @@
                     </Button.Content>
                     <b:Interaction.Triggers>
                         <b:EventTrigger EventName="Click">
-                            <b:InvokeCommandAction Command="{Binding 
-                                RelativeSource={RelativeSource AncestorType=UserControl},
-                                Path=DataContext.LocationListVm.AccessWeatherForecastData}"
+                            <b:InvokeCommandAction Command="{Binding LocationListVm.AccessWeatherForecastData}"
                                                    CommandParameter="1"/>
                             <b:InvokeCommandAction Command="{Binding DataViewCommand}"/>
                         </b:EventTrigger>
@@ -261,9 +259,7 @@
                     </Button.Content>
                     <b:Interaction.Triggers>
                         <b:EventTrigger EventName="Click">
-                            <b:InvokeCommandAction Command="{Binding 
-                                RelativeSource={RelativeSource AncestorType=UserControl},
-                                Path=DataContext.LocationListVm.AccessWeatherForecastData}"
+                            <b:InvokeCommandAction Command="{Binding LocationListVm.AccessWeatherForecastData}"
                                                    CommandParameter="2"/>
                             <b:InvokeCommandAction Command="{Binding DataViewCommand}"/>
                         </b:EventTrigger>
@@ -379,9 +375,7 @@
                     </Button.Content>
                     <b:Interaction.Triggers>
                         <b:EventTrigger EventName="Click">
-                            <b:InvokeCommandAction Command="{Binding 
-                                RelativeSource={RelativeSource AncestorType=UserControl},
-                                Path=DataContext.LocationListVm.AccessWeatherForecastData}"
+                            <b:InvokeCommandAction Command="{Binding LocationListVm.AccessWeatherForecastData}"
                                                    CommandParameter="3"/>
                             <b:InvokeCommandAction Command="{Binding DataViewCommand}"/>
                         </b:EventTrigger>
@@ -497,9 +491,7 @@
                     </Button.Content>
                     <b:Interaction.Triggers>
                         <b:EventTrigger EventName="Click">
-                            <b:InvokeCommandAction Command="{Binding 
-                                RelativeSource={RelativeSource AncestorType=UserControl},
-                                Path=DataContext.LocationListVm.AccessWeatherForecastData}"
+                            <b:InvokeCommandAction Command="{Binding LocationListVm.AccessWeatherForecastData}"
                                                    CommandParameter="4"/>
                             <b:InvokeCommandAction Command="{Binding DataViewCommand}"/>
                         </b:EventTrigger>

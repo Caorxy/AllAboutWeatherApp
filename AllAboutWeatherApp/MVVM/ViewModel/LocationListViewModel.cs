@@ -3,6 +3,7 @@ using System.Linq;
 using AllAboutWeatherApp.Core;
 using AllAboutWeatherApp.Mediator;
 using AllAboutWeatherApp.MVVM.Model;
+using AllAboutWeatherApp.Strategy;
 
 namespace AllAboutWeatherApp.MVVM.ViewModel;
 
@@ -60,7 +61,7 @@ public class LocationListViewModel : ObservableObject
         }
     }
 
-    public LocationListViewModel(IRepository repository)
+    public LocationListViewModel()
     {
         // Listen for messages from the mediator
         Mediator.Mediator.GetInstance().Event += (_, e) =>
@@ -75,55 +76,35 @@ public class LocationListViewModel : ObservableObject
         };
         
         
-        AccessWeatherForecastData = new RelayCommand(async o =>
+        AccessWeatherForecastData = new RelayCommand( o =>
         {
             var searched = new GeoCoordinates();
             var choosenOption = o as string;
-            LocationData? locationData;
 
-            switch (choosenOption)
+            var locationData = choosenOption switch
             {
-                case "1": locationData = _locationData1; break;
-                case "2": locationData = _locationData2; break;
-                case "3": locationData = _locationData3; break;
-                case "4": locationData = _locationData4; break;
-                default: locationData = _locationData1;
-                    break;
-            }
+                "1" => _locationData1,
+                "2" => _locationData2,
+                "3" => _locationData3,
+                "4" => _locationData4,
+                _ => _locationData1
+            };
             searched.Lat = locationData?.Lat;
             searched.Lon = locationData?.Lon;
-            
+
+            var context = new Context(new Repository(new DataRetrieverFactory()));
             switch (Purpose)
             {
-                case "WeatherForecast" :
-                {
-                    var forecastData = await repository.GetWeatherForecast(searched);
-
-                    Mediator.Mediator.GetInstance().OnEvent(this, new ForecastDataMessage
-                    {
-                        MessageType = "ForecastData",
-                        ForecastData = forecastData
-                    });
-                    
-                }
-                    break;
-                case "AirQuality": 
-                {
-                    var airQualityData = await repository.GetAirQualityData(searched);
-
-                    Mediator.Mediator.GetInstance().OnEvent(this, new AirQualityDataMessage
-                    {
-                        MessageType = "AirQualityData",
-                        AirQualityData = airQualityData
-                    });
-                }
-                    break;
+                case "WeatherForecast" : { context.SetStrategy(new WeatherForecastStrategy()); } break;
+                case "AirQuality": { context.SetStrategy(new AirQualityStrategy()); } break;
             }
+            
+            context.ExecuteStrategy(searched);
             
         });
     }
 
-    public void SetLocationData(IEnumerable<LocationData>? locationData)
+    private void SetLocationData(IEnumerable<LocationData>? locationData)
     {
         var enumerable = locationData as LocationData[] ?? locationData?.ToArray();
         if (enumerable != null && enumerable.Any())

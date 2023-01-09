@@ -36,11 +36,9 @@
       <Resource Include="Images\weatherForecastIcons\03d.png" />
       <None Remove="Images\weatherForecastIcons\03n.png" />
       <Resource Include="Images\weatherForecastIcons\03n.png" />
-      <None Remove="Images\weatherForecastIcons\04d.png" />
-      <Resource Include="Images\weatherForecastIcons\04d.png" />
       <None Remove="Images\weatherForecastIcons\04n.png" />
-      <Resource Include="Images\weatherForecastIcons\04n.png" />
       <None Remove="Images\weatherForecastIcons\09d.png" />
+      <Resource Include="Images\weatherForecastIcons\04n.png" />
       <Resource Include="Images\weatherForecastIcons\09d.png" />
       <None Remove="Images\weatherForecastIcons\09n.png" />
       <Resource Include="Images\weatherForecastIcons\09n.png" />
@@ -51,12 +49,12 @@
       <None Remove="Images\weatherForecastIcons\11d.png" />
       <Resource Include="Images\weatherForecastIcons\11d.png" />
       <None Remove="Images\weatherForecastIcons\11n.png" />
-      <Resource Include="Images\weatherForecastIcons\11n.png" />
       <None Remove="Images\weatherForecastIcons\13d.png" />
+      <Resource Include="Images\weatherForecastIcons\11n.png" />
       <Resource Include="Images\weatherForecastIcons\13d.png" />
       <None Remove="Images\weatherForecastIcons\13n.png" />
-      <Resource Include="Images\weatherForecastIcons\13n.png" />
       <None Remove="Images\weatherForecastIcons\50d.png" />
+      <Resource Include="Images\weatherForecastIcons\13n.png" />
       <Resource Include="Images\weatherForecastIcons\50d.png" />
       <None Remove="Images\weatherForecastIcons\50n.png" />
       <Resource Include="Images\weatherForecastIcons\50n.png" />
@@ -77,6 +75,8 @@
       <None Remove="Images\happy-face.png" />
       <None Remove="Images\neutral.png" />
       <None Remove="Images\sad.png" />
+      <None Remove="Images\weatherForecastIcons\04d.png" />
+      <Resource Include="Images\weatherForecastIcons\04d.png" />
     </ItemGroup>
 
     <ItemGroup>
