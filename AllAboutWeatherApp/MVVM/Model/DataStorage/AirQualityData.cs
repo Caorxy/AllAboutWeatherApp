@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AllAboutWeatherApp.MVVM.Model;
+namespace AllAboutWeatherApp.MVVM.Model.DataStorage;
 
 public class AirQualityData
 {

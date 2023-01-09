@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using AllAboutWeatherApp.MVVM.Model.DataStorage;
 
-namespace AllAboutWeatherApp.MVVM.Model;
+namespace AllAboutWeatherApp.MVVM.Model.DataAccessFactory;
 
 public class WeatherDataRetriever : IWeatherDataRetriever
 {

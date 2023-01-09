@@ -44,8 +44,6 @@
       <Resource Include="Images\weatherForecastIcons\09n.png" />
       <None Remove="Images\weatherForecastIcons\10d.png" />
       <Resource Include="Images\weatherForecastIcons\10d.png" />
-      <None Remove="Images\weatherForecastIcons\10n.png" />
-      <Resource Include="Images\weatherForecastIcons\10n.png" />
       <None Remove="Images\weatherForecastIcons\11d.png" />
       <Resource Include="Images\weatherForecastIcons\11d.png" />
       <None Remove="Images\weatherForecastIcons\11n.png" />
@@ -77,6 +75,8 @@
       <None Remove="Images\sad.png" />
       <None Remove="Images\weatherForecastIcons\04d.png" />
       <Resource Include="Images\weatherForecastIcons\04d.png" />
+      <None Remove="Images\weatherForecastIcons\10n.png" />
+      <Resource Include="Images\weatherForecastIcons\10n.png" />
     </ItemGroup>
 
     <ItemGroup>

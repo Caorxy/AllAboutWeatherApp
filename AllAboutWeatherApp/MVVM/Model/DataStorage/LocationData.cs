@@ -1,4 +1,4 @@
-﻿namespace AllAboutWeatherApp.MVVM.Model;
+﻿namespace AllAboutWeatherApp.MVVM.Model.DataStorage;
 
 public class LocationData
 {

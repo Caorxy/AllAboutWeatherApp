@@ -3,6 +3,8 @@ using System.Linq;
 using AllAboutWeatherApp.Core;
 using AllAboutWeatherApp.Mediator;
 using AllAboutWeatherApp.MVVM.Model;
+using AllAboutWeatherApp.MVVM.Model.DataAccessFactory;
+using AllAboutWeatherApp.MVVM.Model.DataStorage;
 using AllAboutWeatherApp.Strategy;
 
 namespace AllAboutWeatherApp.MVVM.ViewModel;

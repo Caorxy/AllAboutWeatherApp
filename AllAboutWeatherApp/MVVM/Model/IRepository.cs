@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using AllAboutWeatherApp.MVVM.Model.DataStorage;
 
 namespace AllAboutWeatherApp.MVVM.Model;
 

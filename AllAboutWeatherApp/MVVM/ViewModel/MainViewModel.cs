@@ -1,5 +1,6 @@
 ﻿using AllAboutWeatherApp.Core;
 using AllAboutWeatherApp.MVVM.Model;
+using AllAboutWeatherApp.MVVM.Model.DataAccessFactory;
 
 namespace AllAboutWeatherApp.MVVM.ViewModel;
 

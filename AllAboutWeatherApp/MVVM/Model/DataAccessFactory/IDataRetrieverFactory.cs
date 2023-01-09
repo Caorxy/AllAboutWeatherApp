@@ -1,4 +1,4 @@
-﻿namespace AllAboutWeatherApp.MVVM.Model;
+﻿namespace AllAboutWeatherApp.MVVM.Model.DataAccessFactory;
 
 public interface IDataRetrieverFactory
 {

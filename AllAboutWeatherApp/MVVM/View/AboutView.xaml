@@ -88,7 +88,7 @@
                            LineHeight="30"
                            Height="100"
                         LineStackingStrategy="BlockLineHeight">
-                        All data comes from <Hyperlink Style="{StaticResource HyperlinkStyle}" NavigateUri="https://www.flaticon.com/free-icons/climate" Command="{Binding AboutVm.HyperlinkCommand}" CommandParameter="https://www.flaticon.com/free-icons/climate">OpenWeatherMap</Hyperlink> <LineBreak />
+                        All data comes from <Hyperlink Style="{StaticResource HyperlinkStyle}" NavigateUri="https://openweathermap.org/api" Command="{Binding AboutVm.HyperlinkCommand}" CommandParameter="https://www.flaticon.com/free-icons/climate">OpenWeatherMap</Hyperlink> <LineBreak />
                     </TextBlock>
                     <TextBlock 
                         LineHeight="15"

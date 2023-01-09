@@ -2,6 +2,7 @@
 using System.Linq;
 using AllAboutWeatherApp.Mediator;
 using AllAboutWeatherApp.MVVM.Model;
+using AllAboutWeatherApp.MVVM.Model.DataStorage;
 
 namespace AllAboutWeatherApp.Strategy;
 

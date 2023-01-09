@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace AllAboutWeatherApp.MVVM.Model;
+namespace AllAboutWeatherApp.MVVM.Model.DataStorage;
 
 public class OpenWeatherForecast
 {

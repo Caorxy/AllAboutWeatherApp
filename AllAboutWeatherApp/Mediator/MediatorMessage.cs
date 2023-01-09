@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using AllAboutWeatherApp.MVVM.Model;
+using AllAboutWeatherApp.MVVM.Model.DataStorage;
 
 namespace AllAboutWeatherApp.Mediator;
 
