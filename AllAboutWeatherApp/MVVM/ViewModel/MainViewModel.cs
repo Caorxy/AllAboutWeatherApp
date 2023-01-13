@@ -38,7 +38,7 @@ public class MainViewModel : ObservableObject
         IRepository repository = new Repository(new DataRetrieverFactory());
         HomeVm = new HomeViewModel();
         AboutVm = new AboutViewModel();
-        LocationListVm = new LocationListViewModel();
+        LocationListVm = new LocationListViewModel(repository);
         TypeLocationVm = new TypeLocationViewModel(repository);
         WeatherForecastVm = new  WeatherForecastViewModel();
         AirQualityVm = new  AirQualityViewModel();

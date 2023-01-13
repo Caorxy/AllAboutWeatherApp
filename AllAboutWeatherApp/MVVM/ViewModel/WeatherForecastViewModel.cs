@@ -44,16 +44,14 @@ public class WeatherForecastViewModel : ObservableObject
 
     public WeatherForecastViewModel()
     {
-        // Listen for messages from the mediator
+        // Nasluchuje eventow od agregatora
         Mediator.Mediator.GetInstance().Event += (_, e) =>
         {
-            // Check the message type to determine if the message is intended for this view model
-            if (e is MediatorMessage {MessageType: "ForecastData"} message)
-            {
-                // Update the LocationData properties with the location data from the message
-                var forecastDataMessage = (ForecastDataMessage) message;
-                SetForecastData(forecastDataMessage.ForecastData);
-            }
+            // Sprawdza czy wiadomosc jest przeznaczona dla niego
+            if (e is not MediatorMessage { MessageType: "ForecastData" } message) return;
+            // aktualizuje swoje pola danymi ktore otrzymal
+            var forecastDataMessage = (ForecastDataMessage) message;
+            SetForecastData(forecastDataMessage.ForecastData);
         };
         
         BackCommand = new RelayCommand(_ => {

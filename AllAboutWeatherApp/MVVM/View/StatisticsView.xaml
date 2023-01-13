@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:AllAboutWeatherApp.MVVM.View"
              xmlns:viewModel="clr-namespace:AllAboutWeatherApp.MVVM.ViewModel"
              mc:Ignorable="d"
-             d:DesignHeight="525" d:DesignWidth="700"
+             d:DesignHeight="525" d:DesignWidth="800"
              FontFamily="Fonts/#Lato">
         <UserControl.DataContext>
             <viewModel:MainViewModel />
@@ -29,26 +29,32 @@
         </Button>
         
         <Border
-            Background="Black"
             Width="450"
             Height="450"
             CornerRadius="10"
             HorizontalAlignment="Left"
             Margin="80,0,0,0"
-            Opacity="0.7">
+        >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="6*"/>
                 </Grid.RowDefinitions>
-                <TextBlock
+                <Border
+                    Opacity="0.7"
+                    Background="Black"/>
+                <TextBlock Grid.Row="0"
                     Foreground="White"
-                    Text="4-day forecast statistics"
+                    Text="Statistics"
                     FontSize="18"
                     Height="30"
                     FontWeight="DemiBold"
+                    VerticalAlignment="Top"
+                    Margin="0,10,0,0"
                     HorizontalAlignment="Center"/>
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1"
+                      Background="Black"
+                      >
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -342,5 +348,166 @@
             </Grid>
             
         </Border>
+        <Button
+            Style="{StaticResource StatisticsButtonStyle}"
+            Opacity="{Binding StatisticsVm.Opacity[0]}"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="80,57,0,0"
+            Content="30-days"
+            Command="{Binding StatisticsVm.Button1Clicked}"/>
+        <Button
+            Style="{StaticResource StatisticsButtonStyle}"
+            Opacity="{Binding StatisticsVm.Opacity[1]}"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="130,57,0,0"
+            Content="1-year"
+            Command="{Binding StatisticsVm.Button2Clicked}"/>
+        <Button
+            Style="{StaticResource StatisticsButtonStyle}"
+            Opacity="{Binding StatisticsVm.Opacity[2]}"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="180,57,0,0"
+            Content="60-years"
+            Command="{Binding StatisticsVm.Button3Clicked}"/>
+        <Button
+            Style="{StaticResource StatisticsButtonStyle}"
+            Opacity="{Binding StatisticsVm.Opacity[3]}"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="230,57,0,0"
+            Content="Custom"
+            Command="{Binding StatisticsVm.Button4Clicked}">
+        <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="0,10,0,0"/>
+                </Style>
+            </Button.Resources>
+            </Button>
+        <Grid
+            Visibility="{Binding StatisticsVm.IsDatePickerVisible}"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Width="130"
+            Height="20"
+            Margin="100,30,0,0">
+            <TextBlock
+                Foreground="White"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontWeight="DemiBold"
+                Text="From:"/>
+            <DatePicker
+            IsTodayHighlighted="True"
+            HorizontalAlignment="Right"
+            FontSize="8"
+            Background="Black"
+            Height="20"
+            Width="80"
+            >
+        <DatePicker.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="2"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style>
+            <Style TargetType="DatePickerTextBox">
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="IsReadOnly" Value="True"/>
+                <Setter Property="TextAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Bottom"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="DatePickerTextBox">
+                            <TextBox BorderThickness="0" 
+                                     FontWeight="DemiBold"
+                                     TextAlignment="Center"
+                                     VerticalAlignment="Bottom" FontSize="9"
+                                     Foreground="White" Background="Black" Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Cursor" Value="Hand"/>
+            </Style>
+            
+        </DatePicker.Resources>
+        </DatePicker>
+        </Grid>
+        <Grid
+            Visibility="{Binding StatisticsVm.IsDatePickerVisible}"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Width="130"
+            Height="20"
+            Margin="100,55,0,0">
+            <TextBlock
+                FontWeight="DemiBold"
+                Foreground="White"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Text="To:"/>
+            <DatePicker
+                IsTodayHighlighted="True"
+                HorizontalAlignment="Right"
+                FontSize="8"
+                Background="Black"
+                Height="20"
+                Width="80"
+            >
+                <DatePicker.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="2"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                    <Style TargetType="DatePickerTextBox">
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="IsReadOnly" Value="True"/>
+                        <Setter Property="TextAlignment" Value="Left"/>
+                        <Setter Property="VerticalAlignment" Value="Bottom"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="DatePickerTextBox">
+                                    <TextBox BorderThickness="0" 
+                                             FontWeight="DemiBold"
+                                             TextAlignment="Center"
+                                             VerticalAlignment="Bottom" FontSize="9"
+                                             Foreground="White" Background="Black" Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Cursor" Value="Hand"/>
+                    </Style>
+                </DatePicker.Resources>
+            </DatePicker>
+        </Grid>
+        <Button
+            Command="{Binding StatisticsVm.ListViewCommand}"
+            Style="{StaticResource StatisticsButtonStyle}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Opacity="{Binding StatisticsVm.OpacitySide[0]}"
+            Height="80"
+            Width="160"
+            FontSize="16"
+            Margin="0,0,30,0"
+            Content="List View"
+            Foreground="White"/>
+        <Button
+            Command="{Binding StatisticsVm.GraphViewCommand}"
+            Style="{StaticResource StatisticsButtonStyle}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Opacity="{Binding StatisticsVm.OpacitySide[1]}"
+            Height="80"
+            Width="160"
+            FontSize="16"
+            Margin="0,160,30,0"
+            Content="Graph View"
+            Foreground="White"/>
     </Grid>
 </UserControl>

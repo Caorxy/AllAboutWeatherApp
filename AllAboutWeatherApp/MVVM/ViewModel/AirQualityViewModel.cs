@@ -54,12 +54,12 @@ public class AirQualityViewModel : ObservableObject
 
     public AirQualityViewModel()
     {
-        // Listen for messages from the mediator
+        // Nasluchuje eventow od agregatora
         Mediator.Mediator.GetInstance().Event += (_, e) =>
         {
-            // Check the message type to determine if the message is intended for this view model
+            // Sprawdza czy wiadomosc jest przeznaczona dla niego
             if (e is not MediatorMessage {MessageType: "AirQualityData"} message) return;
-            // Update the AirQualityData properties with the data from the message
+            // aktualizuje swoje pola danymi ktore otrzymal
             var airQualityDataMessage = (AirQualityDataMessage) message;
             AirQuality = airQualityDataMessage.AirQualityData;
             MainAirPollutionData = AirQuality?.List?[^1];

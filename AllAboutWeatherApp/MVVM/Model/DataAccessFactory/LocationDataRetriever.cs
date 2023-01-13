@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using AllAboutWeatherApp.MVVM.Model.DataAccessFactory;
+using AllAboutWeatherApp.MVVM.Model.DataStorage;
 
-namespace AllAboutWeatherApp.MVVM.Model.DataStorage;
+namespace AllAboutWeatherApp.MVVM.Model.DataAccessFactory;
 
 public class LocationDataRetriever : ILocationDataRetriever
 {

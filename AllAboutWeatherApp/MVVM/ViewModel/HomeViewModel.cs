@@ -1,6 +1,8 @@
-﻿namespace AllAboutWeatherApp.MVVM.ViewModel;
+﻿using AllAboutWeatherApp.Core;
 
-public class HomeViewModel
+namespace AllAboutWeatherApp.MVVM.ViewModel;
+
+public class HomeViewModel : ObservableObject
 {
     
 }

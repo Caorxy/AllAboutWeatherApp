@@ -3,9 +3,8 @@ using System.Linq;
 using AllAboutWeatherApp.Core;
 using AllAboutWeatherApp.Mediator;
 using AllAboutWeatherApp.MVVM.Model;
-using AllAboutWeatherApp.MVVM.Model.DataAccessFactory;
 using AllAboutWeatherApp.MVVM.Model.DataStorage;
-using AllAboutWeatherApp.Strategy;
+using AllAboutWeatherApp.MVVM.Model.Strategy;
 
 namespace AllAboutWeatherApp.MVVM.ViewModel;
 
@@ -63,21 +62,19 @@ public class LocationListViewModel : ObservableObject
         }
     }
 
-    public LocationListViewModel()
+    public LocationListViewModel(IRepository repository)
     {
-        // Listen for messages from the mediator
+        // Nasluchuje eventow od agregatora
         Mediator.Mediator.GetInstance().Event += (_, e) =>
         {
-            // Check the message type to determine if the message is intended for this view model
-            if (e is MediatorMessage {MessageType: "LocationData"} message)
-            {
-                // Update the LocationData properties with the location data from the message
-                var locationDataMessage = (LocationDataMessage) message;
-                SetLocationData(locationDataMessage.LocationData);
-            }
+            // Sprawdza czy wiadomosc jest przeznaczona dla niego
+            if (e is not MediatorMessage { MessageType: "LocationData" } message) return;
+            // aktualizuje swoje pola danymi ktore otrzymal
+            var locationDataMessage = (LocationDataMessage) message;
+            SetLocationData(locationDataMessage.LocationData);
         };
         
-        
+        var context = new Context(repository);
         AccessWeatherForecastData = new RelayCommand( o =>
         {
             var searched = new GeoCoordinates();
@@ -94,7 +91,7 @@ public class LocationListViewModel : ObservableObject
             searched.Lat = locationData?.Lat;
             searched.Lon = locationData?.Lon;
 
-            var context = new Context(new Repository(new DataRetrieverFactory()));
+            
             switch (Purpose)
             {
                 case "WeatherForecast" : { context.SetStrategy(new WeatherForecastStrategy()); } break;

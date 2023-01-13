@@ -5,7 +5,7 @@ using AllAboutWeatherApp.MVVM.Model.DataStorage;
 
 namespace AllAboutWeatherApp.MVVM.ViewModel;
 
-public class TypeLocationViewModel
+public class TypeLocationViewModel  : ObservableObject
 {
     public RelayCommand AccessLocationData { get; set; }
     

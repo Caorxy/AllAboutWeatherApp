@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using AllAboutWeatherApp.Core;
-
 namespace AllAboutWeatherApp.MVVM.ViewModel;
 
 public class AboutViewModel : ObservableObject

@@ -36,6 +36,7 @@
                 <ResourceDictionary Source="Theme/LocationButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/NavButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/AirQualityTextTheme.xaml"/>
+                <ResourceDictionary Source="Theme/StatisticsButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

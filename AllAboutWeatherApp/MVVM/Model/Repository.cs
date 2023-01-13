@@ -22,8 +22,8 @@ public class Repository : IRepository
     
     public async Task<OpenWeatherForecast> GetWeatherForecast(GeoCoordinates coordinates)
     {
-        IWeatherDataRetriever locationDataRetriever = _dataRetrieverFactory.CreateWeatherDataRetriever();
-        return await locationDataRetriever.GetWeatherForecast(coordinates);
+        IWeatherDataRetriever weatherDataRetriever = _dataRetrieverFactory.CreateWeatherDataRetriever();
+        return await weatherDataRetriever.GetWeatherForecast(coordinates);
     }    
     
     public async Task<AirQualityData> GetAirQualityData(GeoCoordinates coordinates)

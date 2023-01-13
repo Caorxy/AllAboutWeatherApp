@@ -1,6 +1,4 @@
-﻿using AllAboutWeatherApp.MVVM.Model.DataStorage;
-
-namespace AllAboutWeatherApp.MVVM.Model.DataAccessFactory;
+﻿namespace AllAboutWeatherApp.MVVM.Model.DataAccessFactory;
 
 public class DataRetrieverFactory : IDataRetrieverFactory
 {

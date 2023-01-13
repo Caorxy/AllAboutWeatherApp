@@ -2,7 +2,8 @@
 using AllAboutWeatherApp.MVVM.Model;
 using AllAboutWeatherApp.MVVM.Model.DataStorage;
 
-namespace AllAboutWeatherApp.Strategy;
+namespace AllAboutWeatherApp.MVVM.Model.Strategy;
+
 
 public class AirQualityStrategy: IStrategy
 {
