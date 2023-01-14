@@ -31,5 +31,11 @@ public class Repository : IRepository
         IAirQualityDataRetriever airQualityDataRetriever = _dataRetrieverFactory.CreateAirQualityDataRetriever();
         return await airQualityDataRetriever.GetAirQualityData(coordinates);
     }
+    
+    public async Task<HistoricalData> GetHistoricalData(GeoCoordinates coordinates)
+    {
+        IHistoricalDataRetriever historicalDataRetriever = _dataRetrieverFactory.CreateHistoricalDataRetriever();
+        return await historicalDataRetriever.GetHistoricalData(coordinates);
+    }
 }
 

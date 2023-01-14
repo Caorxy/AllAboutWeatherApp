@@ -1,5 +1,7 @@
-﻿using AllAboutWeatherApp.Core;
+﻿using System;
+using AllAboutWeatherApp.Core;
 using AllAboutWeatherApp.Mediator;
+using AllAboutWeatherApp.MVVM.Model;
 using AllAboutWeatherApp.MVVM.Model.DataStorage;
 
 namespace AllAboutWeatherApp.MVVM.ViewModel;
@@ -12,6 +14,7 @@ public class StatisticsViewModel : ObservableObject
     public RelayCommand Button4Clicked { get; set; }
     public RelayCommand ListViewCommand { get; set; }
     public RelayCommand GraphViewCommand { get; set; }
+    private HistoricalData? _historicalData;
     private StatisticsData? _statistics;
     private string[] _opacity;
     private string[] _opacitySide;
@@ -57,7 +60,7 @@ public class StatisticsViewModel : ObservableObject
         }
     }
 
-    public StatisticsViewModel()
+    public StatisticsViewModel(ICalculateStatistics calculateStatistics)
     {
         
         // Nasluchuje eventow od agregatora
@@ -69,6 +72,19 @@ public class StatisticsViewModel : ObservableObject
             var statisticsDataMessage = (StatisticsDataMessage) message;
             if (statisticsDataMessage.StatisticsData != null)
                 Statistics = statisticsDataMessage.StatisticsData;
+        };       
+        
+        // Nasluchuje eventow od agregatora
+        Mediator.Mediator.GetInstance().Event += (_, e) =>
+        {
+            // Sprawdza czy wiadomosc jest przeznaczona dla niego
+            if (e is not MediatorMessage {MessageType: "HistoricalData"} message) return;
+            // aktualizuje swoje pola danymi ktore otrzymal
+            var historicalDataMessage = (HistoricalDataMessage) message;
+            if (historicalDataMessage.HistoricalData != null)
+                _historicalData = historicalDataMessage.HistoricalData;
+
+            Statistics = calculateStatistics.GetStatisticsData(new DateTime(2000, 01, 01), DateTime.Now.AddDays(-21), _historicalData);
         };
 
         _isDatePickerVisible = "Collapsed";
@@ -103,6 +119,7 @@ public class StatisticsViewModel : ObservableObject
         {
             OpacitySide = new[] { "0.7", "1" };
         });
+        
         
     }
 }

@@ -26,3 +26,7 @@ public class StatisticsDataMessage : MediatorMessage
 {
     public StatisticsData? StatisticsData { get; set; }
 }
+public class HistoricalDataMessage : MediatorMessage
+{
+    public HistoricalData? HistoricalData { get; set; }
+}

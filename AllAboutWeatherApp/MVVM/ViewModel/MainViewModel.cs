@@ -36,13 +36,14 @@ public class MainViewModel : ObservableObject
     public MainViewModel()
     {
         IRepository repository = new Repository(new DataRetrieverFactory());
+        ICalculateStatistics calculate = new CalculateStatistics();
         HomeVm = new HomeViewModel();
         AboutVm = new AboutViewModel();
         LocationListVm = new LocationListViewModel(repository);
         TypeLocationVm = new TypeLocationViewModel(repository);
         WeatherForecastVm = new  WeatherForecastViewModel();
         AirQualityVm = new  AirQualityViewModel();
-        StatisticsVm = new StatisticsViewModel();
+        StatisticsVm = new StatisticsViewModel(calculate);
         CurrentView = HomeVm;
 
         HomeViewCommand = new RelayCommand(_ =>
