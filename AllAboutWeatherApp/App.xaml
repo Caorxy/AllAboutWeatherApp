@@ -27,6 +27,12 @@
             <DataTemplate DataType="{x:Type viewModel:StatisticsViewModel}">
                 <view:StatisticsView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:StatisticsListViewModel}">
+                <view:StatisticsListView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:StatisticsGraphViewModel}">
+                <view:StatisticsGraphView/>
+            </DataTemplate>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/ButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/HomeButtonTheme.xaml"/>

@@ -4,13 +4,13 @@ namespace AllAboutWeatherApp.MVVM.Model.DataStorage;
 
 public class StatisticsData
 {
-    public double? MinTemp { get; set; }
-    public double? MaxTemp { get; set; }
-    public double? MinPress { get; set; }
-    public double? MaxPress { get; set; }
-    public double? MaxWind { get; set; }
-    public double? MinHum { get; set; }
-    public double? MaxHum { get; set; }
-    public double? MaxRain { get; set; }
+    public float? MinTemp { get; set; }
+    public float? MaxTemp { get; set; }
+    public float? MinPress { get; set; }
+    public float? MaxPress { get; set; }
+    public float? MaxWind { get; set; }
+    public float? MinHum { get; set; }
+    public float? MaxHum { get; set; }
+    public float? MaxRain { get; set; }
     public DateTime?[]? DateTime { get; set; }
 }

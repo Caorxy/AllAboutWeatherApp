@@ -28,6 +28,7 @@
             </StackPanel>
         </Button>
         
+        
         <Border
             Width="450"
             Height="450"
@@ -52,299 +53,8 @@
                     VerticalAlignment="Top"
                     Margin="0,10,0,0"
                     HorizontalAlignment="Center"/>
-                <Grid Grid.Row="1"
-                      Background="Black"
-                      >
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0"
-                       Foreground="White"
-                       Text="Property"
-                       FontSize="16"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="0" Grid.Column="1"
-                        Foreground="White"
-                        Text="Value"
-                        FontSize="16"
-                        FontWeight="SemiBold"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="0" Grid.Column="3"
-                       Foreground="White"
-                       Text="DateTime"
-                       FontSize="16"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-                
-                    <TextBlock Grid.Row="1" Grid.Column="0"
-                       Foreground="White"
-                       Text="Min Temperature"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       Margin="15,0,0,0"
-                       HorizontalAlignment="Left"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1"
-                        Foreground="White"
-                        Text="{Binding StatisticsVm.Statistics.MinTemp}"
-                        FontSize="12"
-                        FontWeight="SemiBold"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="1" Grid.Column="3"
-                       Foreground="White"
-                       Text="{Binding StatisticsVm.Statistics.DateTime[0]}"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"/>
-                
-                    <TextBlock Grid.Row="2" Grid.Column="0"
-                       Foreground="White"
-                       Text="Max Temerature"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       Margin="15,0,0,0"
-                       HorizontalAlignment="Left"/>
-                    <TextBlock Grid.Row="2" Grid.Column="1"
-                        Foreground="White"
-                        Text="{Binding StatisticsVm.Statistics.MaxTemp}"
-                        FontSize="12"
-                        FontWeight="SemiBold"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="2" Grid.Column="3"
-                       Foreground="White"
-                       Text="{Binding StatisticsVm.Statistics.DateTime[1]}"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"/>
-                
-                    <TextBlock Grid.Row="3" Grid.Column="0"
-                       Foreground="White"
-                       Text="Min Pressure"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       Margin="15,0,0,0"
-                       HorizontalAlignment="Left"/>
-                    <TextBlock Grid.Row="3" Grid.Column="1"
-                        Foreground="White"
-                        Text="{Binding StatisticsVm.Statistics.MinPress}"
-                        FontSize="12"
-                        FontWeight="SemiBold"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="3" Grid.Column="3"
-                       Foreground="White"
-                       Text="{Binding StatisticsVm.Statistics.DateTime[2]}"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"/>
-                
-                    <TextBlock Grid.Row="4" Grid.Column="0"
-                       Foreground="White"
-                       Text="Max Pressure"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       Margin="15,0,0,0"
-                       HorizontalAlignment="Left"/>
-                    <TextBlock Grid.Row="4" Grid.Column="1"
-                        Foreground="White"
-                        Text="{Binding StatisticsVm.Statistics.MaxPress}"
-                        FontSize="12"
-                        FontWeight="SemiBold"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="4" Grid.Column="3"
-                       Foreground="White"
-                       Text="{Binding StatisticsVm.Statistics.DateTime[3]}"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"/>
-                
-                    <TextBlock Grid.Row="5" Grid.Column="0"
-                       Foreground="White"
-                       Text="Max Wind"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       Margin="15,0,0,0"
-                       HorizontalAlignment="Left"/>
-                    <TextBlock Grid.Row="5" Grid.Column="1"
-                        Foreground="White"
-                        Text="{Binding StatisticsVm.Statistics.MaxWind}"
-                        FontSize="12"
-                        FontWeight="SemiBold"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="5" Grid.Column="3"
-                       Foreground="White"
-                       Text="{Binding StatisticsVm.Statistics.DateTime[4]}"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"/>
-                
-                    <TextBlock Grid.Row="6" Grid.Column="0"
-                       Foreground="White"
-                       Text="Min Humidity"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       Margin="15,0,0,0"
-                       HorizontalAlignment="Left"/>
-                    <TextBlock Grid.Row="6" Grid.Column="1"
-                        Foreground="White"
-                        Text="{Binding StatisticsVm.Statistics.MinHum}"
-                        FontSize="12"
-                        FontWeight="SemiBold"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="6" Grid.Column="3"
-                       Foreground="White"
-                       Text="{Binding StatisticsVm.Statistics.DateTime[5]}"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"/>
-                
-                    <TextBlock Grid.Row="7" Grid.Column="0"
-                       Foreground="White"
-                       Text="Max Humidity"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       Margin="15,0,0,0"
-                       HorizontalAlignment="Left"/>
-                    <TextBlock Grid.Row="7" Grid.Column="1"
-                        Foreground="White"
-                        Text="{Binding StatisticsVm.Statistics.MaxHum}"
-                        FontSize="12"
-                        FontWeight="SemiBold"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="7" Grid.Column="3"
-                       Foreground="White"
-                       Text="{Binding StatisticsVm.Statistics.DateTime[6]}"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"/>
-                
-                    <TextBlock Grid.Row="8" Grid.Column="0"
-                       Foreground="White"
-                       Text="Max Rain"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       Margin="15,0,0,0"
-                       HorizontalAlignment="Left"/>
-                    <TextBlock Grid.Row="8" Grid.Column="1"
-                        Foreground="White"
-                        Text="{Binding StatisticsVm.Statistics.MaxRain}"
-                        FontSize="12"
-                        FontWeight="SemiBold"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="8" Grid.Column="3"
-                       Foreground="White"
-                       Text="{Binding StatisticsVm.Statistics.DateTime[7]}"
-                       FontSize="10"
-                       FontWeight="SemiBold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"/>
-                    
-                    <TextBlock Grid.Row="1" Grid.Column="2"
-                               Foreground="White"
-                               FontWeight="SemiBold"
-                               Text="°C"
-                               FontSize="12"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                    />
-                    <TextBlock Grid.Row="2" Grid.Column="2"
-                               Foreground="White"
-                               FontWeight="SemiBold"
-                               Text="°C"
-                               FontSize="12"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                    />
-                    <TextBlock Grid.Row="3" Grid.Column="2"
-                               Foreground="White"
-                               FontWeight="SemiBold"
-                               Text="hPa"
-                               FontSize="12"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                    />
-                    <TextBlock Grid.Row="4" Grid.Column="2"
-                               Foreground="White"
-                               FontWeight="SemiBold"
-                               Text="hPa"
-                               FontSize="12"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                    />
-                    <TextBlock Grid.Row="5" Grid.Column="2"
-                               Foreground="White"
-                               FontWeight="SemiBold"
-                               Text="m/s"
-                               FontSize="12"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                    />
-                    <TextBlock Grid.Row="6" Grid.Column="2"
-                               Foreground="White"
-                               FontWeight="SemiBold"
-                               Text="%"
-                               FontSize="12"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                    />
-                    <TextBlock Grid.Row="7" Grid.Column="2"
-                               Foreground="White"
-                               FontWeight="SemiBold"
-                               Text="%"
-                               FontSize="12"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                    />
-                    <TextBlock Grid.Row="8" Grid.Column="2"
-                               Foreground="White"
-                               FontWeight="SemiBold"
-                               Text="mm"
-                               FontSize="12"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                    />
-                
-                </Grid>
+                <ContentControl Grid.Row="1"
+                                Content="{Binding StatisticsVm.CurrentView, Mode=TwoWay}"/>
             </Grid>
             
         </Border>
@@ -370,7 +80,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Margin="180,57,0,0"
-            Content="60-years"
+            Content="30-years"
             Command="{Binding StatisticsVm.Button3Clicked}"/>
         <Button
             Style="{StaticResource StatisticsButtonStyle}"
@@ -400,7 +110,8 @@
                 FontWeight="DemiBold"
                 Text="From:"/>
             <DatePicker
-            IsTodayHighlighted="True"
+                SelectedDate="{Binding StatisticsVm.StartDate, Mode=OneWayToSource}"
+                IsTodayHighlighted="True"
             HorizontalAlignment="Right"
             FontSize="8"
             Background="Black"
@@ -456,6 +167,7 @@
                 Background="Black"
                 Height="20"
                 Width="80"
+                SelectedDate="{Binding StatisticsVm.EndDate, Mode=OneWayToSource}"
             >
                 <DatePicker.Resources>
                     <Style TargetType="Border">
@@ -495,8 +207,7 @@
             Width="160"
             FontSize="16"
             Margin="0,0,30,0"
-            Content="List View"
-            Foreground="White"/>
+            Content="List View"/>
         <Button
             Command="{Binding StatisticsVm.GraphViewCommand}"
             Style="{StaticResource StatisticsButtonStyle}"
@@ -507,7 +218,27 @@
             Width="160"
             FontSize="16"
             Margin="0,160,30,0"
-            Content="Graph View"
-            Foreground="White"/>
+            Content="Graph View"/>
+        
+        <Border
+            Background="Gray"
+            Opacity="0.7"
+            Visibility="{Binding StatisticsVm.IsWaitingForDataVisible}"
+        >
+        </Border>
+        <Border
+            Background="Black"
+            Height="100"
+            Width="200"
+            Visibility="{Binding StatisticsVm.IsWaitingForDataVisible}"
+        >
+            <TextBlock
+                Foreground="White"
+                Height="15"
+                TextAlignment="Center"
+                HorizontalAlignment="Center"
+                Text="Wait while data are retrieved..."
+                />
+        </Border>
     </Grid>
 </UserControl>

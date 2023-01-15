@@ -43,7 +43,7 @@ public class HistoricalDataRetriever : IHistoricalDataRetriever
         
         var dateNow = infos[0] + "-" + infos[1] + "-" + infos[2];
         
-        return $"https://archive-api.open-meteo.com/v1/archive?latitude={lat.ToString(CultureInfo.InvariantCulture)}&longitude={lon.ToString(CultureInfo.InvariantCulture)}&start_date=2000-01-01&end_date={dateNow}&hourly=temperature_2m,relativehumidity_2m,pressure_msl,rain,windspeed_10m";
+        return $"https://archive-api.open-meteo.com/v1/archive?latitude={lat.ToString(CultureInfo.InvariantCulture)}&longitude={lon.ToString(CultureInfo.InvariantCulture)}&start_date=1993-01-01&end_date={dateNow}&hourly=temperature_2m,relativehumidity_2m,pressure_msl,rain,windspeed_10m";
     }
     
 }
