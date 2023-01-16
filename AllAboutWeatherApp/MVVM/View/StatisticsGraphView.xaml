@@ -6,7 +6,7 @@
              xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
              xmlns:viewModel="clr-namespace:AllAboutWeatherApp.MVVM.ViewModel"
              mc:Ignorable="d"
-             d:DesignHeight="385" d:DesignWidth="385">
+             d:DesignHeight="400" d:DesignWidth="385">
     <UserControl.DataContext>
         <viewModel:MainViewModel />
     </UserControl.DataContext>
@@ -16,23 +16,33 @@
         <Button
             Height="36" Width="20" VerticalAlignment="Top" Margin="150,23,0,0"
             Content=">" FontSize="18" FontWeight="SemiBold" Cursor="Hand"
-            Opacity="0.7" Command="{Binding StatisticsVm.StatisticsGraphVm.Next}"
+            Opacity="0.7" Command="{Binding CurrentView.StatisticsGraphVm.Next}"
             Background="Black" Foreground="White" BorderThickness="0"/>
           <Button
             Height="36" Width="20" VerticalAlignment="Top" Margin="0,23,150,0"
             FontSize="18" FontWeight="SemiBold"
             Opacity="0.7" Content="&lt;" Cursor="Hand"
-            Command="{Binding StatisticsVm.StatisticsGraphVm.Back}"
+            Command="{Binding CurrentView.StatisticsGraphVm.Back}"
             Background="Black" Foreground="White" BorderThickness="0">
           </Button>
-        <TextBlock Grid.Row="0"  Text="{Binding StatisticsVm.StatisticsGraphVm.Title}" Foreground="White"
+        <TextBlock Grid.Row="0"  Text="{Binding CurrentView.StatisticsGraphVm.Title}" Foreground="White"
                    VerticalAlignment="Top" Margin="0,30,0,0" 
                    HorizontalAlignment="Center"
                    FontSize="18"
                    FontWeight="SemiBold"/>
-        <lvc:CartesianChart Height="250"  Margin="0,60,0,0" VerticalAlignment="Top" Series="{Binding StatisticsVm.StatisticsGraphVm.Series}"
+        <lvc:CartesianChart Height="250"  Margin="0,60,0,0" VerticalAlignment="Top" Series="{Binding CurrentView.StatisticsGraphVm.Series}"
                             Foreground="White" FontSize="10"
                             TooltipPosition="Hidden"
-                            ZoomMode="X" XAxes="{Binding StatisticsVm.StatisticsGraphVm.XAxes}"/>
+                            ZoomMode="X" XAxes="{Binding CurrentView.StatisticsGraphVm.XAxes}"/>
+        <TextBlock Grid.Row="0" Foreground="White"
+                   VerticalAlignment="Bottom" Margin="0,0,0,30" 
+                   Padding="10"
+                   HorizontalAlignment="Center"
+                   TextWrapping="Wrap"
+                   Opacity="0.6"
+                   Visibility="{Binding CurrentView.StatisticsGraphVm.IsNoteVisible}"
+                   TextAlignment="Center"
+                   FontSize="8" Text="Note that for period longer than 10 months data showed on a graph are AVERAGES of cumulated hourly data. In order to see the data with an accuracy of an hour, please select the narrower time period you are interested in in the custom tab."
+                   FontWeight="SemiBold"/>
     </Grid>
 </UserControl>

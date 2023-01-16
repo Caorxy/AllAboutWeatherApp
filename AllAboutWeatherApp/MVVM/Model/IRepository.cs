@@ -10,4 +10,5 @@ public interface IRepository
     public Task<OpenWeatherForecast> GetWeatherForecast(GeoCoordinates coordinates);
     public Task<AirQualityData> GetAirQualityData(GeoCoordinates coordinates);
     public Task<HistoricalData> GetHistoricalData(GeoCoordinates coordinates);
+    public Task<HistoricalData> GetOpenMapForecast(GeoCoordinates coordinates);
 }

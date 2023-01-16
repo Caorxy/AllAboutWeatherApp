@@ -20,6 +20,10 @@ public class DataRetrieverFactory : IDataRetrieverFactory
     public IHistoricalDataRetriever CreateHistoricalDataRetriever()
     {
         return new HistoricalDataRetriever();
+    }    
+    public IOpenMapForecastDataRetriever CreateOpenMapForecastDataRetriever()
+    {
+        return new OpenMapForecastDataRetriever();
     }
     
 }

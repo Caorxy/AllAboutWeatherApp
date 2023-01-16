@@ -26,7 +26,7 @@ public class HistoricalDataEnumerator : IEnumerator<HistoricalWeatherData>
 
     public void Dispose() { }
 
-    public bool MoveNext() => ++_currentIndex < _hourlyWeatherData.Time.Length;
+    public bool MoveNext() => ++_currentIndex < _hourlyWeatherData.Time?.Length;
 
     public void Reset() => _currentIndex = -1;
 }

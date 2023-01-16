@@ -36,6 +36,12 @@ public class Repository : IRepository
     {
         IHistoricalDataRetriever historicalDataRetriever = _dataRetrieverFactory.CreateHistoricalDataRetriever();
         return await historicalDataRetriever.GetHistoricalData(coordinates);
+    }    
+    
+    public async Task<HistoricalData> GetOpenMapForecast(GeoCoordinates coordinates)
+    {
+        IOpenMapForecastDataRetriever openMapDataRetriever = _dataRetrieverFactory.CreateOpenMapForecastDataRetriever();
+        return await openMapDataRetriever.GetForecastData(coordinates);
     }
 }
 

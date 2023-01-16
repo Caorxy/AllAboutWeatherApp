@@ -9,6 +9,8 @@ using LiveChartsCore.Easing;
 using LiveChartsCore.Kernel;
 using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Drawing.Geometries;
+using LiveChartsCore.SkiaSharpView.Painting;
+using SkiaSharp;
 
 namespace AllAboutWeatherApp.MVVM.ViewModel;
 
@@ -18,6 +20,7 @@ public class StatisticsGraphViewModel : ObservableObject
     private List<ISeries> _series;
     private int _pos;
     private string _title;
+    private string _isNoteVisible;
             
     private readonly Dictionary<int, Func<HistoricalWeatherData, float>> _dataSelectors = new()
     {
@@ -63,6 +66,15 @@ public class StatisticsGraphViewModel : ObservableObject
             OnPropertyChanged();
         }
     }
+    public string IsNoteVisible
+    {
+        get => _isNoteVisible;
+        set
+        {
+            _isNoteVisible = value;
+            OnPropertyChanged();
+        }
+    }
 
     public List<ISeries> Series
     {
@@ -89,6 +101,7 @@ public class StatisticsGraphViewModel : ObservableObject
 
         _pos = 0;
         _title = _titles[_pos];
+        _isNoteVisible = "Collapsed";
         _series = new List<ISeries> { columnSeries1 };
         _xaxes = Array.Empty<Axis>();
 
@@ -130,18 +143,28 @@ public class StatisticsGraphViewModel : ObservableObject
         var values2 = new List<string>();
         var count = CurrentGraphData?.Count();
 
-        if (count > 5000)
+        switch (count)
         {
-            CalculateAvg(values1, values2);
-        }
-        else
-        {
-            foreach (var data in CurrentGraphData!)
+            case > 50000:
+                IsNoteVisible = "Visible";
+                CalculateAvg(values1, values2, 24*7);
+                break;
+            case > 5000:
+                IsNoteVisible = "Visible";
+                CalculateAvg(values1, values2, 24);
+                break;
+            default:
             {
-                values1.Add(_dataSelectors[_pos](data));
-                var date = data.Time.ToString(CultureInfo.InvariantCulture);
-                date = date[..^3];
-                values2.Add(date);
+                IsNoteVisible = "Collapsed";
+                foreach (var data in CurrentGraphData!)
+                {
+                    values1.Add(_dataSelectors[_pos](data));
+                    var date = data.Time.ToString(CultureInfo.InvariantCulture);
+                    date = date[..^3];
+                    values2.Add(date);
+                }
+
+                break;
             }
         }
 
@@ -160,7 +183,8 @@ public class StatisticsGraphViewModel : ObservableObject
             {
                 Name = "Date",
                 Labels = values2,
-                TextSize = 8
+                TextSize = 8,
+                LabelsPaint = new SolidColorPaint(SKColors.White)
             }
         };
 
@@ -169,28 +193,26 @@ public class StatisticsGraphViewModel : ObservableObject
         Series = new List<ISeries> { columnSeries };
     }
     
-    private void CalculateAvg(List<float> values1, List<string> values2) {
+    private void CalculateAvg(List<float> values1, List<string> values2, int divider) {
         float dailyAvg = 0;
-        string date = "";
-        var n = 24;
+        var date = "";
+        var n = divider;
         foreach (var data in CurrentGraphData!) {
             dailyAvg += _dataSelectors[_pos](data);
             n--;
-            switch (n)
+            if (n == divider/2){
+                date = data.Time.ToString(CultureInfo.InvariantCulture);
+                date = date[..^9];
+            }
+            if (n == 0)
             {
-                case 12:
-                    date = data.Time.ToString(CultureInfo.InvariantCulture);
-                    date = date[..^9];
-                    break;
-                case 0:
-                    values1.Add(dailyAvg/24);
-                    values2.Add(date);
-                    dailyAvg = 0;
-                    date = "";
-                    n = 24;
-                    break;
+                values1.Add(dailyAvg / divider);
+                values2.Add(date);
+                dailyAvg = 0;
+                date = "";
+                n = divider;
             }
         }
     }
-
 }
+

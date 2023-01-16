@@ -6,4 +6,5 @@ public interface IDataRetrieverFactory
     IWeatherDataRetriever CreateWeatherDataRetriever();
     IAirQualityDataRetriever CreateAirQualityDataRetriever();
     IHistoricalDataRetriever CreateHistoricalDataRetriever();
+    IOpenMapForecastDataRetriever CreateOpenMapForecastDataRetriever();
 }

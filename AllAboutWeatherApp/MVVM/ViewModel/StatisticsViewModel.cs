@@ -14,10 +14,11 @@ public class StatisticsViewModel : ObservableObject
     public RelayCommand Button3Clicked { get; set; }
     public RelayCommand Button4Clicked { get; set; }
     public RelayCommand ListViewCommand { get; set; }
+    public RelayCommand HomeCommand { get; set; }
     public RelayCommand GraphViewCommand { get; set; }
     private HistoricalData? _historicalData;
     private StatisticsData? _statistics;
-    private ICalculateStatistics _calculateStatistics;
+    private readonly ICalculateStatistics _calculateStatistics;
     private string[] _opacity;
     private string[] _opacitySide;
     private string? _isDatePickerVisible;
@@ -199,6 +200,11 @@ public class StatisticsViewModel : ObservableObject
             OpacitySide = new[] { "0.7", "1" };
             CurrentView = StatisticsGraphVm;
         });
+        HomeCommand = new RelayCommand( _ =>
+        {
+            IsWaitingForDataVisible = "Visible";
+        });
+        
     }
 
     private void CustomDateStats()

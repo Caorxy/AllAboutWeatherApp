@@ -17,15 +17,15 @@ public class HistoricalDataRetriever : IHistoricalDataRetriever
 
     public async Task<HistoricalData> GetHistoricalData(GeoCoordinates coordinates)
     {
-        HistoricalData forecast = null!;
+        HistoricalData data = null!;
         string requestUri = GetGeoRequestUri(coordinates);
 
         HttpResponseMessage response = await _client.GetAsync(requestUri);
 
         if (response.IsSuccessStatusCode)
-            forecast = await response.Content.ReadAsAsync<HistoricalData>();
+            data = await response.Content.ReadAsAsync<HistoricalData>();
 
-        return forecast;
+        return data;
     }
 
 
