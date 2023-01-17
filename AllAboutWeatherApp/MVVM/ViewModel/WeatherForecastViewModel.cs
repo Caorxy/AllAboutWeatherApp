@@ -2,8 +2,8 @@
 using AllAboutWeatherApp.Core;
 using AllAboutWeatherApp.Mediator;
 using AllAboutWeatherApp.MVVM.Model;
-using AllAboutWeatherApp.MVVM.Model.Composite;
 using AllAboutWeatherApp.MVVM.Model.DataStorage;
+using AllAboutWeatherApp.MVVM.Model.HistoricalDataCollection;
 
 namespace AllAboutWeatherApp.MVVM.ViewModel;
 
@@ -104,7 +104,7 @@ public class WeatherForecastViewModel : ObservableObject
             // aktualizuje swoje pola danymi ktore otrzymal
             var forecastDataMessage = (HistoricalDataMessage) message;
             
-            IWeatherData historicalWeatherData = new HistoricalDataComposite(forecastDataMessage.HistoricalData?.HourlyWeatherInfo!);
+            IHistoricalWeatherData historicalWeatherData = new HistoricalDataCollection(forecastDataMessage.HistoricalData?.HourlyWeatherInfo!);
             ICalculateStatistics calculateStatistics = new CalculateStatistics();
             if (StatisticsGraphVm != null)
                 StatisticsGraphVm.CurrentGraphData = calculateStatistics.GetDataFromPeriod(DateTime.Now, DateTime.Now.AddDays(21), historicalWeatherData);

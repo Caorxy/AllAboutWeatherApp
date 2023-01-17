@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using AllAboutWeatherApp.MVVM.Model.DataStorage;
 
-namespace AllAboutWeatherApp.MVVM.Model.Composite;
+namespace AllAboutWeatherApp.MVVM.Model.HistoricalDataCollection;
 
-public class HistoricalDataComposite : IWeatherData
+public class HistoricalDataCollection : IHistoricalWeatherData
 {
     private readonly HourlyWeatherData _hourlyWeatherData;
 
-    public HistoricalDataComposite(HourlyWeatherData hourlyWeatherData)
+    public HistoricalDataCollection(HourlyWeatherData hourlyWeatherData)
     {
         _hourlyWeatherData = hourlyWeatherData;
     }

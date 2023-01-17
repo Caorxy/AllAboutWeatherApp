@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using AllAboutWeatherApp.Core;
-using AllAboutWeatherApp.MVVM.Model.Composite;
+using AllAboutWeatherApp.MVVM.Model.HistoricalDataCollection;
 using LiveChartsCore;
 using LiveChartsCore.Easing;
 using LiveChartsCore.Kernel;

@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using AllAboutWeatherApp.MVVM.Model.DataStorage;
 
-namespace AllAboutWeatherApp.MVVM.Model.Composite;
+namespace AllAboutWeatherApp.MVVM.Model.HistoricalDataCollection;
 
 public class HistoricalDataEnumerator : IEnumerator<HistoricalWeatherData>
 {
@@ -15,7 +16,7 @@ public class HistoricalDataEnumerator : IEnumerator<HistoricalWeatherData>
         _currentIndex = -1;
     }
 
-    public HistoricalWeatherData Current => new HistoricalWeatherData(_hourlyWeatherData.Time![_currentIndex],
+    public HistoricalWeatherData Current => new(_hourlyWeatherData.Time![_currentIndex],
         _hourlyWeatherData.Temperature![_currentIndex],
         _hourlyWeatherData.Humidity![_currentIndex],
         _hourlyWeatherData.Pressure![_currentIndex],
@@ -24,7 +25,7 @@ public class HistoricalDataEnumerator : IEnumerator<HistoricalWeatherData>
 
     object IEnumerator.Current => Current;
 
-    public void Dispose() { }
+    public void Dispose() { GC.SuppressFinalize(this);}
 
     public bool MoveNext() => ++_currentIndex < _hourlyWeatherData.Time?.Length;
 

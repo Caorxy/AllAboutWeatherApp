@@ -2,8 +2,8 @@
 using AllAboutWeatherApp.Core;
 using AllAboutWeatherApp.Mediator;
 using AllAboutWeatherApp.MVVM.Model;
-using AllAboutWeatherApp.MVVM.Model.Composite;
 using AllAboutWeatherApp.MVVM.Model.DataStorage;
+using AllAboutWeatherApp.MVVM.Model.HistoricalDataCollection;
 
 namespace AllAboutWeatherApp.MVVM.ViewModel;
 
@@ -209,7 +209,7 @@ public class StatisticsViewModel : ObservableObject
 
     private void CustomDateStats()
     {
-        IWeatherData historicalWeatherData = new HistoricalDataComposite(_historicalData?.HourlyWeatherInfo!);
+        IHistoricalWeatherData historicalWeatherData = new HistoricalDataCollection(_historicalData?.HourlyWeatherInfo!);
         Statistics = _calculateStatistics.GetStatisticsData(StartDate, EndDate, historicalWeatherData);
         StatisticsGraphVm.CurrentGraphData =  _calculateStatistics.GetDataFromPeriod(StartDate, EndDate, historicalWeatherData);
     }

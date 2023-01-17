@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AllAboutWeatherApp.MVVM.Model.Composite;
+namespace AllAboutWeatherApp.MVVM.Model.HistoricalDataCollection;
 
 public class HistoricalWeatherData
 {

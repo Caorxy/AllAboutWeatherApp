@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AllAboutWeatherApp.MVVM.Model.Composite;
 using AllAboutWeatherApp.MVVM.Model.DataStorage;
+using AllAboutWeatherApp.MVVM.Model.HistoricalDataCollection;
 
 namespace AllAboutWeatherApp.MVVM.Model;
 
 public class CalculateStatistics : ICalculateStatistics
 {
-    public StatisticsData GetStatisticsData(DateTime start, DateTime end, IWeatherData? historicalData)
+    public StatisticsData GetStatisticsData(DateTime start, DateTime end, IHistoricalWeatherData? historicalData)
     {
         var statisticsData = new StatisticsData();
         var source = historicalData?
@@ -46,7 +46,7 @@ public class CalculateStatistics : ICalculateStatistics
     }
 
     public IEnumerable<HistoricalWeatherData>? GetDataFromPeriod(DateTime start, DateTime end,
-        IWeatherData? historicalData)
+        IHistoricalWeatherData? historicalData)
     {
         return historicalData?
             .Where(data => data.Time >= start && data.Time <= end);
