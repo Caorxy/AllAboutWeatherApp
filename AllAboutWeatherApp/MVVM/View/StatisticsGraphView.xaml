@@ -42,7 +42,7 @@
                    Opacity="0.6"
                    Visibility="{Binding CurrentView.StatisticsGraphVm.IsNoteVisible}"
                    TextAlignment="Center"
-                   FontSize="8" Text="Note that for period longer than 10 months data showed on a graph are AVERAGES of cumulated hourly data. In order to see the data with an accuracy of an hour, please select the narrower time period you are interested in in the custom tab."
+                   FontSize="8" Text="Note that for period longer than 5 months data showed on a graph are AVERAGES of cumulated hourly data. In order to see the data with an accuracy of an hour, please select the narrower time period you are interested in in the custom tab."
                    FontWeight="SemiBold"/>
     </Grid>
 </UserControl>

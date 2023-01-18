@@ -243,7 +243,8 @@
                 Height="15"
                 TextAlignment="Center"
                 HorizontalAlignment="Center"
-                Text="Wait while data are retrieved..."
+                FontWeight="DemiBold"
+                Text="Downloading data. Please wait..."
                 />
         </Border>
     </Grid>
